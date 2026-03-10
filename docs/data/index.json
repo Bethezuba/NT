@@ -187,5 +187,15 @@
     "verseCount": 405,
     "hasTranslation": true,
     "hasKjv": true
+  },
+  {
+    "code": "wars6",
+    "name": "Jewish War VI",
+    "author": "Flavius Josephus",
+    "type": "prose",
+    "group": "josephus",
+    "verseCount": 38,
+    "hasTranslation": true,
+    "hasKjv": false
   }
 ]

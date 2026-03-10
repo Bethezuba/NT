@@ -3,381 +3,272 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Greek New Testament</title>
+<title>Greek-English Corpus</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=IM+Fell+English:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root {
-  --parchment:      #f5f0e8;
-  --parchment-dark: #ece4d0;
-  --parchment-mid:  #eee8d8;
-  --ink:            #1a1409;
-  --ink-mid:        #3d3020;
-  --ink-light:      #7a6a50;
-  --red:            #8b1a1a;
-  --gold:           #b8860b;
-  --gold-light:     #d4a017;
-  --border:         #c8b89a;
-  --new-word:       #8b1a1a;
-  --seen-word:      #7a6a50;
-  --sidebar-w:      260px;
-}
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body {
-  background: var(--parchment);
-  color: var(--ink);
-  font-family: 'Crimson Pro', Georgia, serif;
-  font-size: 18px;
-  line-height: 1.7;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
+  :root {
+    --parchment:      #f5f0e8;
+    --parchment-dark: #ece4d0;
+    --parchment-mid:  #eee8d8;
+    --ink:            #1a1409;
+    --ink-mid:        #3d3020;
+    --ink-light:      #7a6a50;
+    --red:            #8b1a1a;
+    --gold:           #b8860b;
+    --gold-light:     #d4a017;
+    --border:         #c8b89a;
+    --new-word:       #8b1a1a;
+    --seen-word:      #7a6a50;
+    --sidebar-w:      260px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 18px;
+    line-height: 1.7;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  header {
+    position: sticky; top: 0; z-index: 200;
+    background: var(--ink);
+    padding: 10px 24px;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 16px;
+    border-bottom: 3px solid var(--gold);
+    box-shadow: 0 2px 16px rgba(0,0,0,0.4);
+    flex-wrap: wrap;
+  }
+  .header-title {
+    font-family: 'IM Fell English', serif;
+    font-size: 1.3rem;
+    color: var(--gold-light);
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+  }
+  .header-title span {
+    font-style: italic; font-size: 0.9rem; color: #a09070; margin-left: 10px;
+  }
+  .header-controls { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .btn-group { display: flex; gap: 3px; }
+  .hbtn {
+    background: transparent;
+    border: 1px solid #3a3020;
+    color: #8a7a60;
+    padding: 4px 12px;
+    cursor: pointer;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .hbtn:hover  { border-color: var(--gold); color: var(--gold-light); }
+  .hbtn.active { background: var(--gold); border-color: var(--gold); color: var(--ink); font-weight: 700; }
+  .hbtn:disabled { opacity: 0.3; cursor: default; }
+  .nav-controls { display: flex; gap: 6px; align-items: center; }
+  .verse-counter {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem; color: #a09070; min-width: 70px; text-align: center;
+  }
+  .app { display: flex; flex: 1; min-height: 0; }
+  aside {
+    width: var(--sidebar-w); min-width: var(--sidebar-w);
+    background: #13100a;
+    border-right: 1px solid #2a2015;
+    overflow-y: auto; flex-shrink: 0;
+  }
+  .sidebar-section { padding: 10px 0; border-bottom: 1px solid #2a2015; }
+  .sidebar-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: #4a3f2a; padding: 4px 16px 8px;
+  }
+  .book-btn {
+    display: flex; align-items: center; justify-content: space-between;
+    width: 100%; background: transparent; border: none;
+    color: #8a7a60; padding: 6px 16px; cursor: pointer;
+    font-family: 'Crimson Pro', serif; font-size: 0.95rem;
+    text-align: left; transition: all 0.12s; gap: 8px;
+  }
+  .book-btn:hover  { background: #1e1810; color: var(--gold-light); }
+  .book-btn.active { background: #2a2015; color: var(--gold-light); font-weight: 600; }
+  .book-btn.incomplete { color: #5a4f3a; }
+  .book-badge {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.55rem;
+    padding: 1px 5px; border-radius: 2px;
+    background: #2a2015; color: #5a4f3a; white-space: nowrap; flex-shrink: 0;
+  }
+  .book-btn.active .book-badge { background: #3a3020; color: var(--gold); }
+  .book-author {
+    font-size: 0.72rem; color: #4a3f2a; display: block; font-style: italic;
+  }
+  main { flex: 1; overflow-y: auto; min-width: 0; display: flex; flex-direction: column; }
+  .loading {
+    display: flex; align-items: center; justify-content: center; height: 300px;
+    font-family: 'JetBrains Mono', monospace; font-size: 0.75rem;
+    color: var(--ink-light); letter-spacing: 0.1em;
+  }
 
-/* ── Header ── */
-header {
-  position: sticky; top: 0; z-index: 200;
-  background: var(--ink);
-  padding: 10px 24px;
-  display: flex; align-items: center; justify-content: space-between;
-  gap: 16px;
-  border-bottom: 3px solid var(--gold);
-  box-shadow: 0 2px 16px rgba(0,0,0,0.4);
-  flex-wrap: wrap;
-}
-.header-title {
-  font-family: 'IM Fell English', serif;
-  font-size: 1.3rem;
-  color: var(--gold-light);
-  letter-spacing: 0.04em;
-  white-space: nowrap;
-}
-.header-title span {
-  font-style: italic;
-  font-size: 0.9rem;
-  color: #a09070;
-  margin-left: 10px;
-}
-.header-controls { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-.btn-group { display: flex; gap: 3px; }
-.hbtn {
-  background: transparent;
-  border: 1px solid #3a3020;
-  color: #8a7a60;
-  padding: 4px 12px;
-  cursor: pointer;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.62rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  border-radius: 2px;
-  transition: all 0.15s;
-  white-space: nowrap;
-}
-.hbtn:hover { border-color: var(--gold); color: var(--gold-light); }
-.hbtn.active { background: var(--gold); border-color: var(--gold); color: var(--ink); font-weight: 700; }
-.hbtn:disabled { opacity: 0.3; cursor: default; }
-.nav-controls { display: flex; gap: 6px; align-items: center; }
-.verse-counter {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.72rem;
-  color: #a09070;
-  min-width: 70px;
-  text-align: center;
-}
+  /* ── Study view ── */
+  #study-view { max-width: 860px; margin: 0 auto; padding: 36px 28px 80px; width: 100%; }
+  .spread { display: none; animation: fadeIn 0.2s ease; }
+  .spread.active { display: block; }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .verse-label {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.68rem;
+    letter-spacing: 0.12em; color: var(--ink-light);
+    text-transform: uppercase; margin-bottom: 10px;
+  }
+  .greek-block {
+    background: var(--parchment-mid); color: var(--ink);
+    padding: 22px 28px; font-size: 1.3rem; line-height: 2;
+    border-radius: 4px; border: 1px solid var(--border);
+    margin-bottom: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  }
+  .key-section { margin-bottom: 24px; }
+  .key-header { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+  .key-header h3 {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.65rem;
+    letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-light);
+  }
+  .key-legend { display: flex; gap: 14px; font-size: 0.78rem; }
+  .legend-new  { color: var(--new-word); font-weight: 600; }
+  .legend-seen { color: var(--seen-word); }
+  .word-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2px; border: 1px solid var(--border); border-radius: 4px; overflow: hidden;
+  }
+  .word-entry {
+    padding: 9px 13px; background: white;
+    border-bottom: 1px solid var(--parchment-dark);
+    display: flex; flex-direction: column; gap: 2px; transition: background 0.1s;
+  }
+  .word-entry:hover { background: var(--parchment); }
+  .word-top { display: flex; align-items: baseline; gap: 8px; }
+  .word-greek { font-size: 1.05rem; font-weight: 600; }
+  .word-greek.is-new  { color: var(--new-word); }
+  .word-greek.is-seen { color: var(--seen-word); }
+  .word-lemma {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.58rem;
+    color: var(--ink-light); opacity: 0.6;
+  }
+  .word-perseus {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.55rem;
+    color: var(--red); text-decoration: none; opacity: 0.7;
+    margin-left: auto; flex-shrink: 0;
+  }
+  .word-perseus:hover { opacity: 1; text-decoration: underline; }
+  .word-gloss { font-size: 0.82rem; color: var(--ink-mid); font-style: italic; line-height: 1.35; }
+  .translations-block { border: 1px solid var(--border); border-radius: 4px; overflow: hidden; }
+  .translation {
+    padding: 13px 24px; border-bottom: 1px solid var(--border);
+    display: grid; grid-template-columns: 85px 1fr;
+    gap: 14px; align-items: start; background: white;
+  }
+  .translation:last-child { border-bottom: none; }
+  .translation.kjv { background: var(--parchment-dark); }
+  .trans-label {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.6rem;
+    letter-spacing: 0.08em; color: var(--red); text-transform: uppercase;
+    padding-top: 3px; font-weight: 500;
+  }
+  .trans-text { font-style: italic; color: var(--ink-mid); font-size: 1rem; }
+  .trans-missing { font-style: normal; color: var(--ink-light); font-size: 0.8rem; opacity: 0.6; }
 
-/* ── Layout ── */
-.app { display: flex; flex: 1; min-height: 0; }
+  /* ── Read view ── */
+  #read-view { display: none; flex: 1; flex-direction: column; animation: fadeIn 0.25s ease; }
+  .read-tab-bar {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--parchment-dark);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 40px;
+    display: flex; gap: 4px; align-items: center;
+  }
+  .read-title {
+    font-family: 'IM Fell English', serif; font-size: 1rem;
+    color: var(--ink-mid); margin-right: 16px; font-style: italic;
+  }
+  .tab-btn {
+    background: transparent; border: 1px solid var(--border);
+    color: var(--ink-light); padding: 5px 16px; cursor: pointer;
+    font-family: 'JetBrains Mono', monospace; font-size: 0.62rem;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    border-radius: 2px; transition: all 0.15s;
+  }
+  .tab-btn:hover  { border-color: var(--gold); color: var(--ink); }
+  .tab-btn.active { background: var(--ink); border-color: var(--ink); color: var(--gold-light); font-weight: 700; }
+  .read-content { max-width: 680px; margin: 0 auto; padding: 48px 40px 100px; }
+  .read-text { display: none; }
+  .read-text.active { display: block; }
+  .read-text.greek-read   { font-size: 1.3rem; line-height: 2.1; color: var(--ink); }
+  .read-text.english-read { font-size: 1.2rem; line-height: 1.95; font-style: italic; color: var(--ink-mid); }
+  .read-para { margin-bottom: 1.4em; }
+  .unavailable-notice {
+    padding: 40px; text-align: center; font-style: italic;
+    color: var(--ink-light); font-size: 0.95rem;
+  }
 
-/* ── Sidebar ── */
-aside {
-  width: var(--sidebar-w);
-  min-width: var(--sidebar-w);
-  background: #13100a;
-  border-right: 1px solid #2a2015;
-  overflow-y: auto;
-  flex-shrink: 0;
-}
-.sidebar-section { padding: 10px 0; border-bottom: 1px solid #2a2015; }
-.sidebar-label {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.6rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: #4a3f2a;
-  padding: 4px 16px 8px;
-}
-.book-btn {
-  display: flex; align-items: center; justify-content: space-between;
-  width: 100%; background: transparent; border: none;
-  color: #8a7a60;
-  padding: 6px 16px;
-  cursor: pointer;
-  font-family: 'Crimson Pro', serif;
-  font-size: 0.95rem;
-  text-align: left;
-  transition: all 0.12s;
-  gap: 8px;
-}
-.book-btn:hover { background: #1e1810; color: var(--gold-light); }
-.book-btn.active { background: #2a2015; color: var(--gold-light); font-weight: 600; }
-.book-btn.incomplete { color: #5a4f3a; }
-.book-badge {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.55rem;
-  padding: 1px 5px;
-  border-radius: 2px;
-  background: #2a2015;
-  color: #5a4f3a;
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-.book-btn.active .book-badge { background: #3a3020; color: var(--gold); }
+  /* ── Footer ── */
+  footer {
+    background: #0e0c07; border-top: 1px solid #2a2015;
+    padding: 20px 40px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.58rem; color: #4a3f2a; line-height: 1.9; letter-spacing: 0.03em;
+  }
+  footer strong { color: #6a5f45; display: block; margin-bottom: 4px; letter-spacing: 0.1em; text-transform: uppercase; }
+  footer a { color: #6a5f45; text-decoration: none; }
+  footer a:hover { color: var(--gold); }
+  .footer-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px 32px; }
 
-/* ── Main ── */
-main { flex: 1; overflow-y: auto; min-width: 0; }
+  /* ── Welcome ── */
+  #welcome {
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: center; min-height: 60vh; text-align: center; padding: 60px 40px;
+  }
+  #welcome h2 { font-family: 'IM Fell English', serif; font-size: 2rem; color: var(--red); margin-bottom: 8px; }
+  #welcome p  { color: var(--ink-light); font-style: italic; font-size: 1.05rem; }
 
-.loading {
-  display: flex; align-items: center; justify-content: center;
-  height: 300px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.75rem;
-  color: var(--ink-light);
-  letter-spacing: 0.1em;
-}
+  /* ── Progress bar ── */
+  .progress-bar {
+    position: fixed; bottom: 0; left: var(--sidebar-w); right: 0;
+    height: 3px; background: var(--gold); transition: width 0.3s ease;
+    z-index: 300; width: 0;
+  }
 
-/* ── Welcome ── */
-#welcome {
-  max-width: 640px;
-  margin: 80px auto;
-  padding: 0 32px;
-  text-align: center;
-}
-#welcome h2 {
-  font-family: 'IM Fell English', serif;
-  font-size: 2.8rem;
-  color: var(--ink-mid);
-  margin-bottom: 12px;
-}
-#welcome p { color: var(--ink-light); font-size: 1rem; }
-#welcome .welcome-books {
-  margin-top: 32px;
-  font-size: 0.82rem;
-  color: var(--ink-light);
-  font-family: 'JetBrains Mono', monospace;
-  letter-spacing: 0.06em;
-}
-
-/* ── Study View ── */
-#study-view {
-  max-width: 860px;
-  margin: 0 auto;
-  padding: 36px 28px 80px;
-}
-.spread { display: none; animation: fadeIn 0.2s ease; }
-.spread.active { display: block; }
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(5px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-.verse-label {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.68rem;
-  letter-spacing: 0.12em;
-  color: var(--ink-light);
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
-.greek-block {
-  background: var(--parchment-mid);
-  color: var(--ink);
-  padding: 22px 28px;
-  font-size: 1.3rem;
-  line-height: 2;
-  border-radius: 4px;
-  border: 1px solid var(--border);
-  margin-bottom: 24px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
-}
-.gword {
-  cursor: pointer;
-  border-radius: 2px;
-  padding: 1px 2px;
-  transition: background 0.12s;
-}
-.gword:hover { background: rgba(184,134,11,0.15); }
-.gword.new-word { color: var(--new-word); }
-.gword.seen-word { color: var(--seen-word); }
-.gword.highlighted { background: rgba(184,134,11,0.25); outline: 1px solid var(--gold); }
-
-/* ── Tabs ── */
-.tab-bar {
-  display: flex; gap: 0;
-  border-bottom: 1px solid var(--border);
-  margin-bottom: 18px;
-}
-.tab-btn {
-  background: transparent;
-  border: none;
-  border-bottom: 2px solid transparent;
-  padding: 6px 16px;
-  cursor: pointer;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.62rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--ink-light);
-  transition: all 0.15s;
-  margin-bottom: -1px;
-}
-.tab-btn:hover { color: var(--ink); }
-.tab-btn.active { color: var(--red); border-bottom-color: var(--red); }
-
-/* ── Word Grid ── */
-.word-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 8px;
-  margin-bottom: 28px;
-}
-.word-card {
-  background: var(--parchment-dark);
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  padding: 10px 14px;
-  cursor: pointer;
-  transition: all 0.12s;
-}
-.word-card:hover { border-color: var(--gold); box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
-.word-card.highlighted { border-color: var(--gold); background: #f0e8d0; }
-.wc-greek {
-  font-size: 1.1rem;
-  color: var(--ink);
-  margin-bottom: 2px;
-}
-.wc-greek .new-mark { color: var(--red); font-size: 0.6rem; margin-left: 4px; vertical-align: super; }
-.wc-lemma {
-  font-size: 0.8rem;
-  color: var(--ink-light);
-  font-style: italic;
-  margin-bottom: 3px;
-}
-.wc-gloss {
-  font-size: 0.82rem;
-  color: var(--ink-mid);
-  font-weight: 600;
-  margin-bottom: 2px;
-}
-.wc-gloss-missing {
-  color: var(--ink-light);
-  font-style: italic;
-  opacity: 0.5;
-}
-
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.58rem;
-  color: var(--ink-light);
-  letter-spacing: 0.06em;
-}
-
-/* ── Translation Panel ── */
-.translation-panel {
-  background: var(--parchment-dark);
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  padding: 20px 24px;
-  margin-bottom: 28px;
-}
-.translation-panel.hidden { display: none; }
-.trans-label {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.6rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--ink-light);
-  margin-bottom: 8px;
-}
-.trans-text { font-size: 1.05rem; line-height: 1.7; color: var(--ink); }
-.trans-text.kjv { font-family: 'IM Fell English', serif; font-size: 1.1rem; }
-
-/* ── Legend ── */
-.legend {
-  display: flex; gap: 18px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.6rem;
-  letter-spacing: 0.08em;
-  color: var(--ink-light);
-  margin-bottom: 20px;
-  flex-wrap: wrap;
-}
-.legend-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 5px; }
-.legend-dot.new { background: var(--red); }
-.legend-dot.seen { background: var(--ink-light); }
-
-/* ── Full Text View ── */
-#full-view {
-  max-width: 860px;
-  margin: 0 auto;
-  padding: 36px 28px 80px;
-  display: none;
-}
-.full-chapter-head {
-  font-family: 'IM Fell English', serif;
-  font-size: 1.5rem;
-  color: var(--ink-mid);
-  margin: 36px 0 14px;
-  padding-bottom: 6px;
-  border-bottom: 1px solid var(--border);
-}
-.full-verse {
-  margin-bottom: 18px;
-  padding-left: 0;
-}
-.full-verse-ref {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.6rem;
-  letter-spacing: 0.1em;
-  color: var(--red);
-  margin-bottom: 3px;
-}
-.full-greek { font-size: 1.1rem; line-height: 1.9; color: var(--ink); margin-bottom: 3px; }
-.full-trans { font-size: 0.92rem; color: var(--ink-light); font-style: italic; line-height: 1.5; }
-.full-kjv { font-family: 'IM Fell English', serif; font-size: 0.97rem; color: var(--ink-mid); margin-top: 2px; }
-
-/* ── Progress bar ── */
-.progress-bar {
-  position: fixed;
-  bottom: 0; left: 0;
-  height: 2px;
-  background: var(--gold);
-  transition: width 0.3s;
-  z-index: 300;
-  width: 0;
-}
-
-/* ── Responsive ── */
-@media (max-width: 700px) {
-  :root { --sidebar-w: 0px; }
-  aside { display: none; }
-  #study-view, #full-view { padding: 20px 14px 80px; }
-  .greek-block { font-size: 1.05rem; padding: 14px 14px; }
-  .word-grid { grid-template-columns: 1fr 1fr; gap: 6px; }
-}
+  @media (max-width: 700px) {
+    :root { --sidebar-w: 0px; }
+    aside { display: none; }
+    .read-content { padding: 32px 18px 80px; }
+    .read-tab-bar { padding: 10px 18px; }
+    .greek-block { font-size: 1.05rem; padding: 16px 16px; }
+    .word-grid { grid-template-columns: 1fr; }
+    .translation { grid-template-columns: 1fr; gap: 3px; }
+  }
 </style>
 </head>
 <body>
 
 <header>
   <div class="header-title">
-    Ἑλληνική Καινή Διαθήκη
-    <span>Greek New Testament</span>
+    Greek-English Corpus
+    <span>ἑλληνικὸν ἀρχεῖον</span>
   </div>
   <div class="header-controls">
     <div class="btn-group" id="mode-btns">
-      <button class="hbtn active" id="mode-study" onclick="setMode('study')">Study</button>
-      <button class="hbtn" id="mode-full"  onclick="setMode('full')">Full Text</button>
+      <button class="hbtn active" onclick="setMode('study')" id="mode-study">Study</button>
+      <button class="hbtn"        onclick="setMode('read')"  id="mode-read">Read</button>
     </div>
-    <div class="nav-controls" id="nav-controls" style="display:none">
+    <div class="nav-controls" id="nav-controls">
       <button class="hbtn" id="prevBtn" onclick="navigate(-1)">← Prev</button>
       <span class="verse-counter" id="verseCounter">— / —</span>
       <button class="hbtn" id="nextBtn" onclick="navigate(1)">Next →</button>
@@ -387,272 +278,257 @@ main { flex: 1; overflow-y: auto; min-width: 0; }
 
 <div class="app">
   <aside id="sidebar">
-    <div class="sidebar-section">
+    <div class="sidebar-section" id="sidebar-nt">
       <div class="sidebar-label">New Testament</div>
-      <div id="book-list"><div class="loading">Loading…</div></div>
+      <div id="book-list-nt"></div>
+    </div>
+    <div class="sidebar-section" id="sidebar-josephus">
+      <div class="sidebar-label">Josephus</div>
+      <div id="book-list-josephus"></div>
     </div>
   </aside>
-
   <main id="main-content">
     <div id="welcome">
-      <h2>Καλῶς ἦλθες</h2>
-      <p>Select a book from the sidebar to begin reading</p>
-      <div class="welcome-books" id="welcome-stats"></div>
+      <h2>Greek-English Corpus</h2>
+      <p>Select a text to begin</p>
     </div>
-
-    <!-- Study mode -->
-    <div id="study-view" style="display:none">
-      <div class="legend">
-        <span><span class="legend-dot new"></span>First occurrence</span>
-        <span><span class="legend-dot seen"></span>Previously seen</span>
-      </div>
-      <div id="spreads"></div>
-    </div>
-
-    <!-- Full text mode -->
-    <div id="full-view"></div>
   </main>
 </div>
 
 <div class="progress-bar" id="progressBar"></div>
 
 <script>
-// ── State ──
-let bookIndex   = [];
-let currentBook = null;
+let bookIndex    = [];
+let currentBook  = null;
 let currentVerse = 0;
 let currentMode  = 'study';
-let currentTab   = 'greek';   // 'greek' | 'mistral' | 'kjv'
-let highlightIdx = null;
+let currentTab   = 'greek';
 
-// ── Boot ──
 async function init() {
   try {
-    const res = await fetch('./data/index.json');
-    if (!res.ok) throw new Error(res.status);
+    const res = await fetch('data/index.json');
     bookIndex = await res.json();
     renderSidebar();
-    const s = document.getElementById('welcome-stats');
-    if (s) s.textContent = `${bookIndex.length} books · ${bookIndex.reduce((a,b)=>a+b.verseCount,0).toLocaleString()} verses`;
   } catch(e) {
-    document.getElementById('book-list').innerHTML =
-      '<div style="padding:16px;color:#8b1a1a;font-size:0.8rem">Could not load data/index.json<br><br>Run build_all_json.py first,<br>then serve from docs/ folder:<br><br><code style="font-size:0.7rem">python3 -m http.server 8080</code></div>';
+    document.getElementById('book-list-nt').innerHTML =
+      '<div style="padding:16px;color:#8b1a1a;font-size:0.8rem">Could not load data/index.json</div>';
   }
 }
 
-// ── Sidebar ──
 function renderSidebar() {
-  const el = document.getElementById('book-list');
-  el.innerHTML = bookIndex.map(b => {
-    const badge = b.hasTranslation ? '' : '<span class="book-badge">Greek only</span>';
-    const cls   = b.hasTranslation ? '' : ' incomplete';
+  const ntBooks  = bookIndex.filter(b => b.group !== 'josephus');
+  const josBooks = bookIndex.filter(b => b.group === 'josephus');
+
+  const makeBtn = b => {
+    const badge  = b.hasTranslation ? '' : '<span class="book-badge">Greek only</span>';
+    const cls    = b.hasTranslation ? '' : ' incomplete';
+    const author = b.author ? `<span class="book-author">${b.author}</span>` : '';
     return `<button class="book-btn${cls}" onclick="loadBook('${b.code}')" id="btn-${b.code}">
-      <span>${b.name}</span>${badge}
+      <span>${b.name}${author}</span>${badge}
     </button>`;
-  }).join('');
+  };
+
+  document.getElementById('book-list-nt').innerHTML       = ntBooks.map(makeBtn).join('');
+  document.getElementById('book-list-josephus').innerHTML  = josBooks.map(makeBtn).join('');
+  if (!josBooks.length) document.getElementById('sidebar-josephus').style.display = 'none';
 }
 
-// ── Load Book ──
 async function loadBook(code) {
   document.querySelectorAll('.book-btn').forEach(b => b.classList.remove('active'));
-  const btn = document.getElementById(`btn-${code}`);
-  if (btn) { btn.classList.add('active'); btn.scrollIntoView({block:'nearest'}); }
-
-  document.getElementById('welcome').style.display = 'none';
-  document.getElementById('study-view').style.display = 'none';
-  document.getElementById('full-view').style.display  = 'none';
-  document.getElementById('main-content').insertAdjacentHTML('beforeend',
-    '<div class="loading" id="tmp-loading">Loading…</div>');
-
+  const btn = document.getElementById('btn-' + code);
+  if (btn) btn.classList.add('active');
+  document.getElementById('main-content').innerHTML = '<div class="loading">Loading\u2026</div>';
   try {
-    const res = await fetch(`./data/${code}.json`);
-    if (!res.ok) throw new Error(res.status);
+    const res   = await fetch('data/' + code + '.json');
     currentBook  = await res.json();
     currentVerse = 0;
-    highlightIdx = null;
-    document.getElementById('tmp-loading')?.remove();
-    applyMode();
+    renderBook();
   } catch(e) {
-    document.getElementById('tmp-loading')?.remove();
-    document.getElementById('main-content').insertAdjacentHTML('beforeend',
-      `<div class="loading">Failed to load ${code}.json — ${e.message}</div>`);
+    document.getElementById('main-content').innerHTML =
+      '<div class="loading">Failed to load ' + code + '.json</div>';
   }
 }
 
-// ── Mode ──
-function setMode(mode) {
-  currentMode = mode;
-  document.getElementById('mode-study').classList.toggle('active', mode === 'study');
-  document.getElementById('mode-full').classList.toggle('active',  mode === 'full');
-  if (currentBook) applyMode();
+function renderBook() {
+  const main = document.getElementById('main-content');
+  main.innerHTML = '';
+
+  // ── Study view ──
+  const studyDiv = document.createElement('div');
+  studyDiv.id = 'study-view';
+
+  currentBook.verses.forEach((v, i) => {
+    const div = document.createElement('div');
+    div.className = 'spread' + (i === 0 ? ' active' : '');
+    div.id = 'spread-' + i;
+
+    let wordSection = '';
+    if (v.words && v.words.length) {
+      const wordItems = v.words.map(w => {
+        const gloss    = w.gloss || '<span class="trans-missing">no gloss</span>';
+        const lemmaEnc = encodeURIComponent(w.lemma);
+        const perseus  = 'https://www.perseus.tufts.edu/hopper/morph?l=' + lemmaEnc + '&la=greek';
+        return '<div class="word-entry">' +
+          '<div class="word-top">' +
+            '<span class="word-greek ' + (w.isNew ? 'is-new' : 'is-seen') + '">' + w.greek + '</span>' +
+            '<span class="word-lemma">\u2192 ' + w.lemma + '</span>' +
+            '<a class="word-perseus" href="' + perseus + '" target="_blank" rel="noopener">\u2197 LSJ</a>' +
+          '</div>' +
+          '<div class="word-gloss">' + gloss + '</div>' +
+        '</div>';
+      }).join('');
+      wordSection = '<div class="key-section">' +
+        '<div class="key-header"><h3>Word Key</h3>' +
+        '<div class="key-legend"><span class="legend-new">\u25cf new word</span>' +
+        '<span class="legend-seen">\u25cf seen before</span></div></div>' +
+        '<div class="word-grid">' + wordItems + '</div></div>';
+    }
+
+    const mistralRow = v.mistral
+      ? '<div class="translation"><span class="trans-label">Mistral</span><span class="trans-text">' + v.mistral + '</span></div>'
+      : '<div class="translation"><span class="trans-label">Mistral</span><span class="trans-missing">Translation pending</span></div>';
+
+    const kjvRow = v.kjv
+      ? '<div class="translation kjv"><span class="trans-label">KJV</span><span class="trans-text">' + v.kjv + '</span></div>'
+      : '';
+
+    div.innerHTML =
+      '<div class="verse-label">' + currentBook.name + ' \u00b7 ' + v.ref + '</div>' +
+      '<div class="greek-block">' + v.greek + '</div>' +
+      wordSection +
+      '<div class="translations-block">' + mistralRow + kjvRow + '</div>';
+
+    studyDiv.appendChild(div);
+  });
+
+  // ── Read view ──
+  const readDiv = document.createElement('div');
+  readDiv.id = 'read-view';
+
+  const greekProse   = buildProse(currentBook.verses, 'greek');
+  const mistralProse = currentBook.hasTranslation
+    ? buildProse(currentBook.verses, 'mistral')
+    : '<div class="unavailable-notice">Translation not yet available.</div>';
+  const kjvProse = currentBook.hasKjv
+    ? buildProse(currentBook.verses, 'kjv') : null;
+
+  const kjvTabBtn  = currentBook.hasKjv
+    ? '<button class="tab-btn" onclick="setTab(\'kjv\',this)">KJV 1611</button>' : '';
+  const kjvTextDiv = currentBook.hasKjv
+    ? '<div class="read-text english-read" id="read-kjv">' + kjvProse + '</div>' : '';
+
+  readDiv.innerHTML =
+    '<div class="read-tab-bar">' +
+      '<span class="read-title">' + currentBook.name + '</span>' +
+      '<button class="tab-btn active" onclick="setTab(\'greek\',this)">Greek</button>' +
+      '<button class="tab-btn" onclick="setTab(\'mistral\',this)">English</button>' +
+      kjvTabBtn +
+    '</div>' +
+    '<div class="read-content">' +
+      '<div class="read-text greek-read active" id="read-greek">' + greekProse + '</div>' +
+      '<div class="read-text english-read" id="read-mistral">' + mistralProse + '</div>' +
+      kjvTextDiv +
+    '</div>';
+
+  main.appendChild(studyDiv);
+  main.appendChild(readDiv);
+  main.appendChild(buildFooter());
+
+  const welcome = document.getElementById('welcome');
+  if (welcome) welcome.remove();
+
+  currentTab = 'greek';
+  applyMode();
+  updateNavUI();
+}
+
+// Flowing prose — no verse numbers, grouped into paragraphs
+function buildProse(verses, field) {
+  const PARA = 5;
+  let html = '';
+  for (let i = 0; i < verses.length; i += PARA) {
+    const text = verses.slice(i, i + PARA)
+      .map(v => (v[field] || '').trim()).filter(Boolean).join(' ');
+    if (text) html += '<p class="read-para">' + text + '</p>';
+  }
+  return html || '<div class="unavailable-notice">Text not available.</div>';
+}
+
+function buildFooter() {
+  const f = document.createElement('footer');
+  f.innerHTML = '<div class="footer-grid">' +
+    '<div><strong>Greek New Testament</strong>' +
+    'MorphGNT (<a href="https://github.com/morphgnt/morphgnt" target="_blank">github.com/morphgnt/morphgnt</a>), CC BY-SA 3.0. Morphological tagging by the MorphGNT project.</div>' +
+    '<div><strong>Greek Lexicon</strong>' +
+    'Dodson Greek Lexicon (<a href="https://github.com/morphgnt/dodson-lexicon" target="_blank">github.com/morphgnt/dodson-lexicon</a>), public domain.</div>' +
+    '<div><strong>King James Version</strong>KJV 1611. Public domain.</div>' +
+    '<div><strong>Josephus — Jewish War</strong>' +
+    'Greek text of Flavius Josephus, <em>De Bello Judaico</em>, from open corpus. ' +
+    'W. Whiston (1737) translation available for comparison but not reproduced here.</div>' +
+    '<div><strong>English Translations</strong>' +
+    'Generated by Mistral 7B (mistral:7b, Mistral AI) running locally via Ollama. ' +
+    'Machine translation, unreviewed. Not for citation without verification against the Greek.</div>' +
+    '<div><strong>Forthcoming</strong>' +
+    'BeDuhn\u2013Bilby Greek reconstruction of Marcion\u2019s Evangelion, ' +
+    '<em>Journal of Open Humanities Data</em> (2023). CC BY-NC-ND.</div>' +
+  '</div>';
+  return f;
+}
+
+function setMode(m) {
+  currentMode = m;
+  ['study','read'].forEach(id =>
+    document.getElementById('mode-' + id).classList.toggle('active', id === m));
+  document.getElementById('nav-controls').style.display = m === 'study' ? 'flex' : 'none';
+  applyMode();
+  document.getElementById('main-content').scrollTop = 0;
 }
 
 function applyMode() {
-  document.getElementById('study-view').style.display = currentMode === 'study' ? 'block' : 'none';
-  document.getElementById('full-view').style.display  = currentMode === 'full'  ? 'block' : 'none';
-  document.getElementById('nav-controls').style.display = currentMode === 'study' ? 'flex' : 'none';
-
-  if (currentMode === 'study') renderStudy();
-  else                          renderFull();
+  const sv = document.getElementById('study-view');
+  const rv = document.getElementById('read-view');
+  if (!sv || !rv) return;
+  sv.style.display = currentMode === 'study' ? 'block' : 'none';
+  rv.style.display = currentMode === 'read'  ? 'flex'  : 'none';
+  if (currentMode === 'read') rv.style.flexDirection = 'column';
 }
 
-// ── Study Mode ──
-function renderStudy() {
-  if (!currentBook) return;
-  const verses = currentBook.verses;
-  const v      = verses[currentVerse];
-  const total  = verses.length;
-
-  // verse counter
-  document.getElementById('verseCounter').textContent = `${currentVerse + 1} / ${total}`;
-  document.getElementById('prevBtn').disabled = currentVerse === 0;
-  document.getElementById('nextBtn').disabled = currentVerse === total - 1;
-
-  // progress
-  document.getElementById('progressBar').style.width =
-    ((currentVerse + 1) / total * 100) + '%';
-
-  // Build verse HTML
-  const wordsHtml = v.words.map((w, i) => {
-    const cls = w.isNew ? 'new-word' : 'seen-word';
-    return `<span class="gword ${cls}" data-idx="${i}" onclick="highlightWord(${i})">${w.greek}</span>`;
-  }).join(' ');
-
-  // Tab bar
-  const hasM = !!v.mistral;
-  const hasK = !!v.kjv;
-  const tabBar = `
-    <div class="tab-bar">
-      <button class="tab-btn ${currentTab==='greek'   ? 'active':''}" onclick="setTab('greek')">Greek</button>
-      ${hasM ? `<button class="tab-btn ${currentTab==='mistral' ? 'active':''}" onclick="setTab('mistral')">Translation</button>` : ''}
-      ${hasK ? `<button class="tab-btn ${currentTab==='kjv'     ? 'active':''}" onclick="setTab('kjv')">KJV</button>`     : ''}
-    </div>`;
-
-  // Translation panels
-  const mistralPanel = hasM ? `
-    <div class="translation-panel ${currentTab==='mistral'?'':'hidden'}">
-      <div class="trans-label">English Translation</div>
-      <div class="trans-text">${esc(v.mistral)}</div>
-    </div>` : '';
-
-  const kjvPanel = hasK ? `
-    <div class="translation-panel ${currentTab==='kjv'?'':'hidden'}">
-      <div class="trans-label">King James Version</div>
-      <div class="trans-text kjv">${esc(v.kjv)}</div>
-    </div>` : '';
-
-  // Word grid
-  const wordGrid = v.words.map((w, i) => {
-    const newMark  = w.isNew ? '<span class="new-mark">★</span>' : '';
-    const glossHtml = w.gloss
-      ? `<div class="wc-gloss">${esc(w.gloss)}</div>`
-      : `<div class="wc-gloss wc-gloss-missing">no gloss</div>`;
-    const lemmaHtml = w.lemma
-      ? `<div class="wc-lemma">${esc(w.lemma)}</div>`
-      : '';
-    const strongsHtml = w.strongs
-      ? `<div class="wc-strongs">Strong's ${esc(w.strongs)}</div>`
-      : '';
-    return `<div class="word-card" data-idx="${i}" onclick="highlightWord(${i})">
-      <div class="wc-greek">${esc(w.greek)}${newMark}</div>
-      ${glossHtml}
-      ${lemmaHtml}
-      ${strongsHtml}
-    </div>`;
-  }).join('');
-
-  const container = document.getElementById('spreads');
-  container.innerHTML = `
-    <div class="verse-label">${esc(currentBook.name)} ${esc(v.ref)}</div>
-    <div class="greek-block">${wordsHtml}</div>
-    ${tabBar}
-    ${mistralPanel}
-    ${kjvPanel}
-    <div class="word-grid" id="word-grid">${wordGrid}</div>
-  `;
-
-  // Re-apply highlight if any
-  if (highlightIdx !== null) applyHighlight(highlightIdx);
-
-  // Scroll main to top
-  document.querySelector('main').scrollTop = 0;
-}
-
-function setTab(tab) {
+function setTab(tab, btn) {
   currentTab = tab;
-  renderStudy();
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  document.querySelectorAll('.read-text').forEach(el => el.classList.remove('active'));
+  const target = document.getElementById('read-' + tab);
+  if (target) target.classList.add('active');
 }
 
-function highlightWord(idx) {
-  highlightIdx = (highlightIdx === idx) ? null : idx;
-  applyHighlight(highlightIdx);
-}
-
-function applyHighlight(idx) {
-  document.querySelectorAll('.gword').forEach(el => {
-    el.classList.toggle('highlighted', parseInt(el.dataset.idx) === idx);
-  });
-  document.querySelectorAll('.word-card').forEach(el => {
-    el.classList.toggle('highlighted', parseInt(el.dataset.idx) === idx);
-  });
-  if (idx !== null) {
-    const card = document.querySelector(`.word-card[data-idx="${idx}"]`);
-    if (card) card.scrollIntoView({block:'nearest', behavior:'smooth'});
-  }
-}
-
-// ── Navigate ──
 function navigate(dir) {
   if (!currentBook) return;
-  const next = currentVerse + dir;
-  if (next < 0 || next >= currentBook.verses.length) return;
-  currentVerse = next;
-  highlightIdx = null;
-  renderStudy();
+  const spreads = document.querySelectorAll('.spread');
+  spreads[currentVerse].classList.remove('active');
+  currentVerse = Math.max(0, Math.min(spreads.length - 1, currentVerse + dir));
+  spreads[currentVerse].classList.add('active');
+  document.getElementById('main-content').scrollTop = 0;
+  updateNavUI();
 }
 
-// Keyboard nav
+function updateNavUI() {
+  if (!currentBook) return;
+  const total = currentBook.verses.length;
+  document.getElementById('verseCounter').textContent = (currentVerse + 1) + ' / ' + total;
+  document.getElementById('prevBtn').disabled = currentVerse === 0;
+  document.getElementById('nextBtn').disabled = currentVerse === total - 1;
+  document.getElementById('progressBar').style.width =
+    ((currentVerse + 1) / total * 100).toFixed(1) + '%';
+}
+
 document.addEventListener('keydown', e => {
-  if (currentMode !== 'study') return;
-  if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') {
-    e.preventDefault(); navigate(1);
-  } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
-    e.preventDefault(); navigate(-1);
-  }
+  if (currentMode !== 'study' || !currentBook) return;
+  if (e.target.tagName === 'INPUT') return;
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') navigate(1);
+  if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   navigate(-1);
 });
 
-// ── Full Text Mode ──
-function renderFull() {
-  if (!currentBook) return;
-  const el = document.getElementById('full-view');
-
-  let html = `<h2 style="font-family:'IM Fell English',serif;font-size:2rem;color:var(--ink-mid);margin-bottom:28px">${esc(currentBook.name)}</h2>`;
-
-  let lastCh = null;
-  for (const v of currentBook.verses) {
-    const [ch] = v.ref.split(':');
-    if (ch !== lastCh) {
-      html += `<div class="full-chapter-head">Chapter ${ch}</div>`;
-      lastCh = ch;
-    }
-    html += `<div class="full-verse">
-      <div class="full-verse-ref">${esc(currentBook.name)} ${esc(v.ref)}</div>
-      <div class="full-greek">${esc(v.greek)}</div>
-      ${v.mistral ? `<div class="full-trans">${esc(v.mistral)}</div>` : ''}
-      ${v.kjv     ? `<div class="full-kjv">${esc(v.kjv)}</div>` : ''}
-    </div>`;
-  }
-  el.innerHTML = html;
-  document.querySelector('main').scrollTop = 0;
-}
-
-// ── Utility ──
-function esc(s) {
-  if (!s) return '';
-  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-}
-
-// ── Start ──
 init();
 </script>
 </body>

@@ -1,0 +1,283 @@
+{
+  "code": "wars6",
+  "name": "Jewish War VI",
+  "author": "Flavius Josephus",
+  "type": "prose",
+  "group": "josephus",
+  "verseCount": 38,
+  "hasTranslation": true,
+  "hasKjv": false,
+  "attribution": {
+    "greek": "Flavius Josephus, De Bello Judaico (Jewish War). Greek text from open corpus.",
+    "translation": "Translated by Mistral 7B (mistral:7b via Ollama). Machine translation, unreviewed.",
+    "whiston": "W. Whiston (1737) translation available for comparison but not reproduced here."
+  },
+  "verses": [
+    {
+      "ref": "Wars VI.1",
+      "n": 1,
+      "greek": "Μαρία τοὔνομα, πατρὸς Ἐλεαζάρου, κώμης Βηθεζουβᾶ, σημαίνει δὲ τοῦτο οἶκος ὑσσώπου, διὰ γένος καὶ πλοῦτον ἐπίσημος, μετὰ τοῦ λοιποῦ πλήθους εἰς τὰ Ἱεροσόλυμα καταφυγοῦσα συνεπολιορκεῖτο. ταύτης τὴν μὲν ἄλλην κτῆσιν οἱ τύραννοι διήρπασαν, ὅσην ἐκ τῆς Περαίας ἀνασκευασαμένη μετήνεγκεν εἰς τὴν πόλιν, τὰ δὲ λείψανα τῶν κειμηλίων καὶ εἴ τι τροφῆς ἐπινοηθείη καθʼ ἡμέραν εἰσπηδῶντες ἥρπαζον οἱ δορυφόροι. δεινὴ δὲ τὸ γύναιον ἀγανάκτησις εἰσῄει, καὶ πολλάκις λοιδοροῦσα καὶ καταρωμένη τοὺς ἅρπαγας ἐφʼ αὑτὴν ἠρέθιζεν.",
+      "mistral": "Mary, of the house of Jesse, a village called Bethlehem, signifies the house of David, renowned for both lineage and wealth. Fleeing with the remainder of the crowd to Jerusalem, she was besieged. The tyrants seized her other possessions, which she had gathered from the Perahia, and brought them into the city. However, the remaining assets of the infant, and anything that might have been daily sustenance, the soldiers would seize whenever they raided. Yet, the noble woman's indignation was fierce, and she often cursed and reproached the thieves for their actions against her.",
+      "kjv": ""
+    },
+    {
+      "ref": "Wars VI.2",
+      "n": 2,
+      "greek": "ὡς δʼ οὔτε παροξυνόμενός τις οὔτʼ ἐλεῶν αὐτὴν ἀνῄρει, καὶ τὸ μὲν εὑρεῖν τι σιτίον ἄλλοις ἐκοπία, πανταχόθεν δὲ ἄπορον ἦν ἤδη καὶ τὸ εὑρεῖν, ὁ λιμὸς δὲ διὰ σπλάγχνων καὶ μυελῶν ἐχώρει καὶ τοῦ λιμοῦ μᾶλλον ἐξέκαιον οἱ θυμοί, σύμβουλον λαβοῦσα τὴν ὀργὴν μετὰ τῆς ἀνάγκης ἐπὶ τὴν φύσιν ἐχώρει, καὶ τὸ τέκνον, ἦν δὲ αὐτῇ παῖς ὑπομάστιος, ἁρπασαμένη βρέφος, εἶπεν, ἄθλιον, ἐν πολέμῳ καὶ λιμῷ καὶ στάσει τίνι σε τηρήσω; τὰ μὲν παρὰ Ῥωμαίοις δουλεία, κἂν ζήσωμεν ἐπʼ αὐτούς, φθάνει δὲ καὶ δουλείαν ὁ λιμός, οἱ στασιασταὶ δὲ ἀμφοτέρων χαλεπώτεροι.",
+      "mistral": "The man neither accelerates nor shows pity and seizes her. To find something for sustenance for others, there was already scarcity, and even to find it became difficult. The famine, however, rages through hearts and veins, and the famine more than the hearts is gnawing at the souls. Taking counsel from her anger, she is driven to nature, and speaking, she said, \"Wretched one, in war, famine, and turmoil, who will keep you safe?\" To the Romans is slavery, even if we live among them, but even slavery the famine imposes, the rebels are harsher for both.",
+      "kjv": ""
+    },
+    {
+      "ref": "Wars VI.3",
+      "n": 3,
+      "greek": "ἴθι, γενοῦ μοι τροφὴ καὶ τοῖς στασιασταῖς ἐρινὺς καὶ τῷ βίῳ μῦθος ὁ μόνος ἐλλείπων ταῖς Ἰουδαίων συμφοραῖς. καὶ ταῦθʼ ἅμα λέγουσα κτείνει τὸν υἱόν, ἔπειτʼ ὀπτήσασα τὸ μὲν ἥμισυ κατεσθίει, τὸ δὲ λοιπὸν κατακαλύψασα ἐφύλαττεν. εὐθέως δʼ οἱ στασιασταὶ παρῆσαν, καὶ τῆς ἀθεμίτου κνίσης σπάσαντες ἠπείλουν, εἰ μὴ δείξειεν τὸ παρασκευασθέν, ἀποσφάξειν αὐτὴν εὐθέως.",
+      "mistral": "Bring me sustenance and strife for the rebels, and let a life-saving story be the only thing lacking in the misfortunes of the Jews. And at the same time speaking, she was killing her son, afterward cooking half of him, and hiding the rest. Immediately, the rebels arrived, seizing the unprotected portion, threatening that if she did not produce the cooked part, they would kill her immediately.",
+      "kjv": ""
+    },
+    {
+      "ref": "Wars VI.4",
+      "n": 4,
+      "greek": "ἡ δὲ καὶ μοῖραν αὐτοῖς εἰποῦσα καλὴν τετηρηκέναι τὰ λείψανα τοῦ τέκνου διεκάλυψεν. τοὺς δʼ εὐθέως φρίκη καὶ παρέκστασις ᾕρει καὶ παρὰ τὴν ὄψιν ἐπεπήγεσαν.",
+      "mistral": "She concealed the remaining part of the child from them, maintaining that a beautiful custom should be preserved. Immediately, fear and awe overcame them, and they vanished from sight.",
+      "kjv": ""
+    },
+    {
+      "ref": "Wars VI.5",
+      "n": 5,
+      "greek": "ἡ δʼ ἐμόν, ἔφη, τοῦτο τέκνον γνήσιον καὶ τὸ ἔργον ἐμόν. φάγετε, καὶ γὰρ ἐγὼ βέβρωκα. μὴ γένησθε μήτε μαλακώτεροι γυναικὸς μήτε συμπαθέστεροι μητρός. εἰ δʼ ὑμεῖς εὐσεβεῖς καὶ τὴν ἐμὴν ἀποστρέφεσθε θυσίαν, ἐγὼ μὲν ὑμῖν βέβρωκα, καὶ τὸ λοιπὸν δὲ ἐμοὶ μεινάτω. μετὰ ταῦθʼ οἱ μὲν τρέμοντες ἐξῄεσαν, πρὸς ἓν τοῦτο δειλοὶ καὶ μόλις ταύτης τῆς τροφῆς τῇ μητρὶ παραχωρήσαντες, ἀνεπλήσθη δʼ εὐθέως ὅλη τοῦ μύσους ἡ πόλις, καὶ πρὸ ὀμμάτων ἕκαστος τὸ πάθος λαμβάνων ὥσπερ αὐτῷ τολμηθὲν ἔφριττε. σπουδὴ δὲ τῶν λιμωττόντων ἐπὶ τὸν θάνατον ἦν, καὶ μακαρισμὸς τῶν φθασάντων πρὶν ἀκοῦσαι καὶ θεάσασθαι κακὰ τηλικαῦτα.",
+      "mistral": "The child is mine, she said, this is a holy child and my work. Eat, for I have nourished him. Do not become more tender than a woman or more compassionate than a mother. If you are righteous and turn away from my sacrifice, I have nourished him, and the rest let it remain with me. After this, those who trembled departed, fearful and reluctant to part with this food from the mother, yet immediately the entire city was filled with dread, and each one receiving the affliction as if it had dared to happen to him. However, a great blessing was upon those who arrived before hearing and seeing such terrible things.",
+      "kjv": ""
+    },
+    {
+      "ref": "Wars VI.6",
+      "n": 6,
+      "greek": "Ταχέως δὲ καὶ Ῥωμαίοις διηγγέλθη τὸ πάθος. τῶν δʼ οἱ μὲν ἠπίστουν, οἱ δὲ ᾤκτειρον, τοὺς δὲ πολλοὺς εἰς μῖσος τοῦ ἔθνους σφοδρότερον συνέβη προελθεῖν.",
+      "mistral": "Quickly, too, the event was reported to the Romans. Some disbelieved, some wept, many more were induced to hate the nation even more.",
+      "kjv": ""
+    },
+    {
+      "ref": "Wars VI.7",
+      "n": 7,
+      "greek": "Καῖσαρ δὲ ἀπελογεῖτο καὶ περὶ τούτου τῷ θεῷ, φάσκων παρὰ μὲν αὐτοῦ Ἰουδαίοις εἰρήνην καὶ αὐτονομίαν προτείνεσθαι καὶ πάντων ἀμνηστίαν τῶν τετολμημένων, τοὺς δὲ ἀντὶ μὲν ὁμονοίας στάσιν, ἀντὶ δὲ εἰρήνης πόλεμον, πρὸ κόρου δὲ καὶ εὐθηνίας λιμὸν αἱρουμένους, ἰδίαις δὲ χερσὶν ἀρξαμένους καίειν τὸ συντηρούμενον ὑφʼ ἡμῶν ἱερὸν αὐτοῖς, εἶναι καὶ τοιαύτης τροφῆς ἀξίους. καλύψειν μέντοι τὸ τῆς τεκνοφαγίας μύσος αὐτῷ τῷ τῆς πατρίδος πτώματι καὶ οὐ καταλείψειν ἐπὶ τῆς οἰκουμένης ἡλίῳ καθορᾶν πόλιν, ἐν ᾗ μητέρες οὕτω τρέφονται. προσήκειν μέντοι πρὸ μητέρων πατράσιν τὴν τοιαύτην τροφήν, οἳ καὶ μετὰ τηλικαῦτα πάθη μένουσιν ἐν τοῖς ὅπλοις. ταῦθʼ ἅμα διεξιὼν ἐνενόει καὶ τὴν ἀπόγνωσιν τῶν ἀνδρῶν· οὐ γὰρ ἂν ἔτι σωφρονῆσαι τοὺς πάντα προπεπονθότας ἐφʼ οἷς εἰκὸς ἦν μεταβαλέσθαι μὴ παθοῦσιν.",
+      "mistral": "Emperor Caesar was offering peace and autonomy, and amnesty for all who had rebelled, instead of unity, he proposed a war, and before harmony and peace, famine; and those who were starting to burn our sacred temple, he deemed worthy of such food. However, he would cover the abomination of infanticide with the corpse of his own country and leave no city visible on the globe where mothers nourish their children in this way. Before mothers, it should be handed over to fathers. Those who had endured such things continue to remain in their weapons. At the same time, he also considered the judgment of the men; for it was not likely that those who had suffered on these matters would change their minds if they did not suffer.",
+      "kjv": ""
+    },
+    {
+      "ref": "Wars VI.8",
+      "n": 8,
+      "greek": "Ἤδη δὲ τῶν δύο ταγμάτων συντετελεκότων τὰ χώματα Λώου μηνὸς ὀγδόῃ προσάγειν ἐκέλευσε τοὺς κριοὺς κατὰ τὴν ἑσπέριον ἐξέδραν τοῦ ἔξωθεν ἱεροῦ. πρὸ δὲ τούτων ἓξ ἡμέρας ἀδιαλείπτως ἡ στερροτάτη πασῶν ἑλέπολις τύπτουσα τὸν τοῖχον οὐδὲν ἤνυσεν, ἀλλὰ καὶ ταύτης καὶ τῶν ἄλλων τὸ μέγεθος καὶ ἡ ἁρμονία τῶν λίθων ἦν ἀμείνων. τῆς δὲ βορείου πύλης ὑπώρυττον ἕτεροι τοὺς θεμελίους καὶ πολλὰ ταλαιπωρήσαντες τοὺς ἔμπροσθεν λίθους ἐξεκύλισαν. ἀνείχοντο δʼ ὑπὸ τῶν ἐνδοτέρω καὶ διέμεινεν ἡ πύλη, μέχρι τὰς διʼ ὀργάνων καὶ τῶν μοχλῶν ἐπιχειρήσεις ἀπογνόντες κλίμακας ταῖς στοαῖς προσέφερον. οἱ δὲ Ἰουδαῖοι κωλῦσαι μὲν οὐκ ἔφθασαν, ἀναβᾶσι δὲ συμπεσόντες ἐμάχοντο, καὶ τοὺς μὲν ἀνωθοῦντες εἰς τοὐπίσω κατεκρήμνιζον, τοὺς δʼ ὑπαντιάζοντας ἀνῄρουν· πολλοὺς δὲ τῶν κλιμάκων ἀποβαίνοντας πρὶν φράξασθαι τοῖς θυρεοῖς παίοντες ταῖς ῥομφαίαις ἔφθανον, ἐνίας δὲ γεμούσας ὁπλιτῶν κλίμακας παρακλίνοντες ἄνωθεν κατέσειον·",
+      "mistral": "The walls of Lysas and the towers of Beth-horon were to be attacked by the armies at dusk on the eighth month. For six days previously, the hardest of all stones, Jericho, had beaten on the wall without any response, but the size and harmony of the stones were superior. The gate of the north was hardened and many, weary from pushing the stones, managed to move them. However, under the pressure from within and standing firm, the gate endured, until the siege works reached the organs and the gates of the walls. The Jews were unable to stop them, but when they approached, they fought and those who ascended were thrown back, while those who stood in defense were repelled. Many of the ascenders were killed by those behind them with their spears, while those who approached the gates were cut down with swords. Some of the attackers, having filled their shields with stones, turned them upside-down and dropped them from above.",
+      "kjv": ""
+    },
+    {
+      "ref": "Wars VI.9",
+      "n": 9,
+      "greek": "ἦν δʼ οὐκ ὀλίγος καὶ αὐτῶν φόνος. οἱ δὲ ἀνενεγκόντες τὰς σημαίας περὶ αὐτῶν ἐπολέμουν, δεινὴν ἡγούμενοι καὶ πρὸς αἰσχύνης τούτων τὴν ἁρπαγήν. τέλος δὲ καὶ τῶν σημαιῶν οἱ Ἰουδαῖοι κρατοῦσιν καὶ τοὺς ἀναβάντας διαφθείρουσιν· οἱ δὲ λοιποὶ πρὸς τὸ τῶν ἀπολωλότων πάθος ὀρρωδοῦντες ἀνεχώρουν. τῶν μὲν οὖν Ῥωμαίων ἄπρακτος οὐδεὶς ἀπέθανεν, τῶν δὲ στασιαστῶν οἳ κατὰ τὰς προτέρας μάχας ἠγωνίσαντο γενναίως καὶ τότε καὶ Ἐλεάζαρος ἀδελφιδοῦς τοῦ τυράννου Σίμωνος.",
+      "mistral": "There was not a small number of their murders. Those who brought forth the signs about them were warring, considering it a terrible thing and a disgrace for these matters. In the end, the Jews kept the signs, and those ascending they were destroying. The others, sorrowing for the suffering of the slain, were leaving. However, no Roman was an active participant in their deaths, but those who had previously fought the battles, including Eleazar, brother of the tyrant Simon.",
+      "kjv": ""
+    },
+    {
+      "ref": "Wars VI.10",
+      "n": 10,
+      "greek": "ὁ δὲ Τίτος ὡς ἑώρα τὴν ἐπὶ τοῖς ἀλλοτρίοις ἱεροῖς φειδὼ πρὸς βλάβης τοῖς στρατιώταις γινομένην καὶ φόνου, τὰς πύλας προσέταξεν ὑφάπτειν.",
+      "mistral": "Titus, upon seeing the destruction taking place on foreign altars and the impending slaughter, commanded the soldiers to seize the gates.",
+      "kjv": ""
+    },
+    {
+      "ref": "Wars VI.11",
+      "n": 11,
+      "greek": "Ἐν δὲ τούτῳ πρὸς αὐτὸν αὐτομολοῦσιν Ἄνανός τε ὁ ἀφαμμαούς, τῶν Σίμωνος δορυφόρων ὁ φονικώτατος, καὶ Ἀρχέλαος υἱὸς Μαγαδδάτου, συγγνώμην ἐλπίσαντες ἐπειδὴ κρατούντων Ἰουδαίων ἀπεχώρουν.",
+      "mistral": "In that situation, Ananus the uncircumcised, Simon's spear-bearer, the most purple, and Archaelous son of Magaddatus, hoping for forgiveness since, with the Jews in control, they were leaving.",
+      "kjv": ""
+    },
+    {
+      "ref": "Wars VI.12",
+      "n": 12,
+      "greek": "Τίτος δὲ καὶ τοῦτο τὸ πανούργημα προβάλλεται τῶν ἀνδρῶν, καὶ τὴν ἄλλην περὶ τοὺς ἰδίους ὠμότητα πεπυσμένος ὥρμητο κτείνειν ἑκατέρους, ὑπʼ ἀνάγκης ἦχθαι λέγων αὐτούς, οὐκ ἐκ προαιρέσεως παρεῖναι, καὶ σωτηρίας οὐκ ἀξίους εἶναι τοὺς φλεγομένης ἤδη διʼ αὐτοὺς τῆς πατρίδος ἐξαλλομένους.",
+      "mistral": "Titus also was brought before the council for this entire affair, and being bound by necessity, he was compelled to say to them that he had not voluntarily been present, and that they were not worthy of salvation who were already burning the country through their actions.",
+      "kjv": ""
+    },
+    {
+      "ref": "Wars VI.13",
+      "n": 13,
+      "greek": "ἐκράτει δʼ ὅμως τοῦ θυμοῦ ἡ πίστις, καὶ ἀφίησι τοὺς ἄνδρας, οὐ μὴν ἐν ἴσῃ μοίρᾳ κατέτασσε τοῖς ἄλλοις.",
+      "mistral": "Faith, nevertheless, controlled his emotions, and forgave the men, yet did not appoint them on equal footing with others.",
+      "kjv": ""
+    },
+    {
+      "ref": "Wars VI.14",
+      "n": 14,
+      "greek": "ἤδη δὲ ταῖς πύλαις οἱ στρατιῶται προσῆγον τὸ πῦρ, καὶ περιτηκόμενος ὁ ἄργυρος διεδίδου ταχέως εἰς τὴν ξυλείαν τὴν φλόγα, ἔνθεν ἀθρόως ἐκφερομένη τῶν στοῶν ἐπελαμβάνετο. τοῖς δὲ Ἰουδαίοις ὁρῶσι τὸ πῦρ ἐν κύκλῳ μετὰ τῶν σωμάτων παρείθησαν αἱ ψυχαί, καὶ διὰ τὴν κατάπληξιν ἀμύνειν μὲν ἢ σβεννύειν ὥρμησεν οὐδείς, αὖοι δʼ ἑστῶτες ἀφεώρων. οὐ μὴν πρὸς τὸ δαπανώμενον ἀθυμοῦντες εἰς γοῦν τὸ λοιπὸν ἐσωφρόνουν, ἀλλʼ ὡς ἤδη καὶ τοῦ ναοῦ καιομένου τοὺς θυμοὺς ἐπὶ Ῥωμαίους ἔθηγον.",
+      "mistral": "The soldiers approached the gates with the fire, and the silver was quickly thrown into the wooden pyre to feed the flames. The Jews, observing the fire surrounding the bodies, were struck with astonishment, and none could act to defend or extinguish. However, those standing by looked on without intervening. Although sorrowful because of the expenditure, they nevertheless maintained their composure for the most part. But when the temple was set ablaze, they directed their anger towards the Romans.",
+      "kjv": ""
+    },
+    {
+      "ref": "Wars VI.15",
+      "n": 15,
+      "greek": "ἐκείνην μὲν οὖν τὴν ἡμέραν καὶ τὴν ἐπιοῦσαν νύκτα τὸ πῦρ ἐπεκράτει· κατὰ μέρος γάρ, οὐχ ὁμοῦ πάντοθεν ἴσχυσαν ὑφάψαι τὰς στοάς.",
+      "mistral": "The fire continued on that day and throughout the night. Not everywhere, however, were they able to pull down the walls.",
+      "kjv": ""
+    },
+    {
+      "ref": "Wars VI.16",
+      "n": 16,
+      "greek": "Τῇ δʼ ἐπιούσῃ Τίτος μέρει τῆς δυνάμεως σβεννύειν τε καὶ τὰ παρὰ τὰς πύλας ὁδοποιεῖν εἰς εὐμαρεστέραν τῶν ταγμάτων ἄνοδον κελεύσας αὐτὸς συνῆγε τοὺς ἡγεμόνας. καὶ συνελθόντων ἓξ τῶν κορυφαιοτάτων, Τιβερίου τε Ἀλεξάνδρου τοῦ πάντων τῶν στρατευμάτων ἐπάρχοντος, καὶ Σέξτου Κερεαλίου τοῦ τὸ πέμπτον ἄγοντος τάγμα, καὶ Λαρκίου Λεπίδου τὸ δέκατον, καὶ Τίτου Φρυγίου τὸ πεντεκαιδέκατον, πρὸς οἷς Φρόντων ἦν Ἑτέριος στρατοπεδάρχης τῶν ἀπὸ Ἀλεξανδρείας δύο ταγμάτων, καὶ Μᾶρκος Ἀντώνιος Ἰουλιανὸς ὁ τῆς Ἰουδαίας ἐπίτροπος, καὶ μετὰ τούτους ἐπιτρόπων καὶ χιλιάρχων ἀθροισθέντων, βουλὴν περὶ τοῦ ναοῦ προυτίθει. τοῖς μὲν οὖν ἐδόκει χρῆσθαι τῷ τοῦ πολέμου νόμῳ· μὴ γὰρ ἄν ποτε Ἰουδαίους παύσασθαι νεωτερίζοντας τοῦ ναοῦ μένοντος, ἐφʼ ὃν οἱ πανταχόθεν συλλέγονται. τινὲς δὲ παρῄνουν, εἰ μὲν καταλίποιεν αὐτὸν Ἰουδαῖοι καὶ μηδεὶς ἐπʼ αὐτοῦ τὰ ὅπλα θείη, σώζειν, εἰ δὲ πολεμοῖεν ἐπιβάντες, καταφλέγειν· φρούριον γάρ, οὐκέτι ναὸν εἶναι, καὶ τὸ λοιπὸν ἔσεσθαι τῶν ἀναγκασάντων τὴν ἀσέβειαν, οὐκ αὐτῶν.",
+      "mistral": "The following command was given by Titus regarding the removal of the stones and the making of a passage to an easier ascent for the ranks: He himself summoned the commanders. And when six of the foremost had assembled, Tiberius Alexander, the commander-in-chief of all the armies, and Sextus Cerealis, the leader of the fifth cohort, and Larkius Lepidus, the leader of the tenth, and Titus Frigius, the leader of the fifteenth, and Phronto, a military commander of the two cohorts from Alexandria, and Marcus Julianus, the overseer of Judea, and with them the presidents and thousand commanders gathered, it was decided about the temple. To the former it seemed fit to follow the law of war: For the Jews would never cease to fortify the temple, which was the source of their gathering. However, some considered if the Jews would leave the temple unguarded and no one would arm against it, it would be saved; but if they fought and entered, it would be burned. For it was no longer a temple, but a fortress, and the rest was to be the work of those forcing the impiety, not theirs.",
+      "kjv": ""
+    },
+    {
+      "ref": "Wars VI.17",
+      "n": 17,
+      "greek": "ὁ δὲ Τίτος οὐδʼ ἂν ἐπιβάντες ἐπʼ αὐτοῦ πολεμῶσιν Ἰουδαῖοι φήσας ἀντὶ τῶν ἀνδρῶν ἀμυνεῖσθαι τὰ ἄψυχα οὐδὲ καταφλέξειν ποτὲ τηλικοῦτον ἔργον· Ῥωμαίων γὰρ ἔσεσθαι τὴν βλάβην, ὥσπερ καὶ κόσμον τῆς ἡγεμονίας αὐτοῦ μένοντος· θαρροῦντες δὲ ἤδη προσετίθεντο τῇ γνώμῃ Φρόντων τε καὶ Ἀλέξανδρος καὶ Κερεάλιος. τότε μὲν οὖν διαλύει τὸ συνέδριον καὶ τὰς ἄλλας δυνάμεις διαναπαῦσαι κελεύσας τοῖς ἡγεμόσιν, ὅπως ἐρρωμενεστέροις ἐν τῇ παρατάξει χρήσαιτο, τοῖς ἀπὸ τῶν σπειρῶν ἐπιλέκτοις ὁδοποιεῖν διὰ τῶν ἐρειπίων προσέταξε καὶ τὸ πῦρ σβεννύειν.",
+      "mistral": "Titus, however, the Jews, not entering upon him to fight, said they would defend the unprotected and would never attempt such a task; for the damage would be to the Romans, just as their dominion remained; but they were already confident and had proposed to Phronto, Alexander, and Kerialis. Then, therefore, the council was dissolved and all the forces commanded to cease, instructing the commanders to use the chosen ones from the sowers to pave the way through the waste places and to extinguish the fire.",
+      "kjv": ""
+    },
+    {
+      "ref": "Wars VI.18",
+      "n": 18,
+      "greek": "Κατʼ ἐκείνην μὲν δὴ τὴν ἡμέραν τῶν Ἰουδαίων κάματός τε καὶ κατάπληξις ἐκράτησε τὰς ὁρμάς· τῇ δʼ ἐπιούσῃ συλλεξάμενοί τε τὴν ἰσχὺν καὶ ἀναθαρσήσαντες ἐπεκθέουσι διὰ τῆς ἀνατολικῆς πύλης τοῖς φύλαξι τοῦ ἔξωθεν ἱεροῦ περὶ δευτέραν ὥραν. οἱ δὲ καρτερῶς μὲν ἐδέξαντο αὐτῶν τὴν ἐμβολὴν καὶ φραξάμενοι τοῖς θυρεοῖς κατὰ μέτωπον ὥσπερ τεῖχος ἐπύκνωσαν τὴν φάλαγγα, δῆλοι δʼ ἦσαν οὐκ ἐπὶ πολὺ συμμενοῦντες πλήθει τε τῶν ἐκτρεχόντων καὶ θυμοῖς ἡττώμενοι. φθάσας δὲ τῆς παρατάξεως τὴν ῥοπὴν Καῖσαρ, καθεώρα γὰρ ἀπὸ τῆς Ἀντωνίας, ἐπήμυνε μετὰ τῶν ἐπιλέκτων ἱππέων.",
+      "mistral": "The forces of the Jews, on that day, were struck with paralysis and surprise, gathering strength and breaking out through the eastern gate towards the guards of the outer sanctuary around the second hour. However, they firmly met their attack, forming a wall-like line with their shields, and it was clear they were not yielding easily to the multitude of those rushing at them nor to their spirits being overcome. But when Caesar reached the engagement, for he had observed from Antonia, he encouraged with select horsemen.",
+      "kjv": ""
+    },
+    {
+      "ref": "Wars VI.19",
+      "n": 19,
+      "greek": "Ἰουδαῖοι δὲ τὴν ἔφοδον οὐχ ὑπέμειναν, ἀλλὰ τῶν πρώτων πεσόντων ἐτράπησαν οἱ πολλοί· καὶ ὑποχωροῦσι μὲν τοῖς Ῥωμαίοις ἐπιστρεφόμενοι προσέκειντο, μεταβαλλομένων δὲ ἀνέφευγον πάλιν, ἕως περὶ πέμπτην τῆς ἡμέρας ὥραν οἱ μὲν βιασθέντες εἰς τὸ ἔνδον συνεκλείσθησαν ἱερόν.",
+      "mistral": "Jews could not hold their ground, but those falling first turned to retreat and face the Romans. However, changing their formation, they escaped again until, by the fifth hour of the day, the Romans had forced them into lockdown within the temple.",
+      "kjv": ""
+    },
+    {
+      "ref": "Wars VI.20",
+      "n": 20,
+      "greek": "Τίτος δὲ ἀνεχώρησεν εἰς τὴν Ἀντωνίαν διεγνωκὼς τῆς ἐπιούσης ἡμέρας ὑπὸ τὴν ἕω μετὰ πάσης ἐμβαλεῖν τῆς δυνάμεως καὶ τὸν ναὸν περικατασχεῖν. τοῦ δʼ ἄρα κατεψήφιστο μὲν τὸ πῦρ ὁ θεὸς πάλαι, παρῆν δʼ ἡ εἱμαρμένη χρόνων περιόδοις ἡμέρα δεκάτη Λώου μηνός, καθʼ ἣν καὶ πρότερον ὑπὸ τοῦ τῶν Βαβυλωνίων βασιλέως ἐνεπρήσθη. λαμβάνουσι δʼ αἱ φλόγες ἐκ τῶν οἰκείων τὴν ἀρχὴν καὶ τὴν αἰτίαν·",
+      "mistral": "The fire from within was kindled by God, and on the tenth day of the lunar month of Loos, which had previously been stirred up by the Babylonian king, the flames took their origin and cause.",
+      "kjv": ""
+    },
+    {
+      "ref": "Wars VI.21",
+      "n": 21,
+      "greek": "ὑποχωρήσαντος γὰρ τοῦ Τίτου πρὸς ὀλίγον λωφήσαντες οἱ στασιασταὶ πάλιν τοῖς Ῥωμαίοις ἐπιτίθενται, καὶ τῶν τοῦ ναοῦ φρουρῶν γίνεται συμβολὴ πρὸς τοὺς σβεννύντας τὸ πῦρ τοῦ ἔνδοθεν ἱεροῦ, οἳ τρεψάμενοι τοὺς Ἰουδαίους μέχρι τοῦ ναοῦ παρηκολούθουν.",
+      "mistral": "The insurrectionists, having momentarily withdrawn at the arrival of Titus, are again set against the Romans. The guards of the temple become a sign to those quenching the inner sanctuary's fire, who, having turned the Jews, followed them up to the temple.",
+      "kjv": ""
+    },
+    {
+      "ref": "Wars VI.22",
+      "n": 22,
+      "greek": "ἔνθα δὴ τῶν στρατιωτῶν τις οὔτε παράγγελμα περιμείνας οὔτʼ ἐπὶ τηλικούτῳ δείσας ἐγχειρήματι, δαιμονίῳ ὁρμῇ τινι χρώμενος ἁρπάζει μὲν ἐκ τῆς φλεγομένης † φλογός, ἀνακουφισθεὶς δὲ ὑπὸ συστρατιώτου τὸ πῦρ ἐνίησι θυρίδι χρυσῇ, καθʼ ἣν εἰς τοὺς περὶ τὸν ναὸν οἴκους εἰσιτὸν ἦν ἐκ τοῦ βορείου κλίματος. αἰρομένης δὲ τῆς φλογὸς Ἰουδαίων μὲν ἐγείρεται κραυγὴ τοῦ πάθους ἀξία, καὶ πρὸς τὴν ἄμυναν συνέθεον, οὔτε τοῦ ζῆν ἔτι φειδὼ λαμβάνοντες οὔτε ταμιευόμενοι τὴν ἰσχύν, διʼ ὃ φυλακτικοὶ πρότερον ἦσαν οἰχομένου.",
+      "mistral": "The guards, without waiting for orders nor fearing such danger, seized with some supernatural impulse the burning flame, having been extinguished by a fellow soldier with a golden door, through which entry to the house near the temple from the northern climate was possible. When the fire was raised among the Jews, a cry of affliction worthy arose, and they rallied to the defense, neither fearing to live anymore nor preserving their strength, for which reason the watchmen were previously weakened.",
+      "kjv": ""
+    },
+    {
+      "ref": "Wars VI.23",
+      "n": 23,
+      "greek": "Δραμὼν δέ τις ἀγγέλλει Τίτῳ· κἀκεῖνος, ἔτυχεν δὲ κατὰ σκηνὴν ἀναπαυόμενος ἐκ τῆς μάχης, ὡς εἶχεν ἀναπηδήσας ἔθει πρὸς τὸν ναὸν εἴρξων τὸ πῦρ. κατόπιν δὲ οἵ τε ἡγεμόνες εἵποντο πάντες, καὶ πτοηθέντα τούτοις ἠκολούθει τὰ τάγματα· βοὴ δὲ ἦν καὶ θόρυβος ἅτε τηλικαύτης δυνάμεως ἀτάκτως κεκινημένης.",
+      "mistral": "A man ran and reported to Titus. He, finding himself in the tent resting after the battle, sprang up and approached the temple, extinguishing the fire. However, the commanders followed behind, and the ranks followed that which was terrified. There was a cry and uproar, due to the overwhelming power that was chaotically stirred.",
+      "kjv": ""
+    },
+    {
+      "ref": "Wars VI.24",
+      "n": 24,
+      "greek": "ὁ μὲν οὖν Καῖσαρ τῇ τε φωνῇ καὶ τῇ δεξιᾷ διεσήμαινε τοῖς μαχομένοις τὸ πῦρ σβεννύειν, οὔτε δὲ βοῶντος ἤκουον μείζονι κραυγῇ τὰς ἀκοὰς προκατειλημμένοι καὶ τοῖς νεύμασι τῆς χειρὸς οὐ προσεῖχον, οἱ μὲν τῷ πολεμεῖν, οἱ δὲ ὀργῇ περισπώμενοι. τῶν δὲ ταγμάτων εἰσθεόντων οὔτε παραίνεσις οὔτʼ ἀπειλὴ κατεῖχεν τὰς ὁρμάς, ἀλλʼ ὁ θυμὸς ἁπάντων ἐστρατήγει· καὶ περὶ τὰς εἰσόδους συνωθούμενοι πολλοὶ μὲν ὑπʼ ἀλλήλων κατεπατοῦντο, πολλοὶ δὲ θερμοῖς ἔτι καὶ τυφομένοις τοῖς ἐρειπίοις τῶν στοῶν ἐμπίπτοντες ἡττωμένων συμφοραῖς ἐχρῶντο. πλησίον δὲ τοῦ ναοῦ γινόμενοι τῶν μὲν τοῦ Καίσαρος παραγγελμάτων προσεποιοῦντο μηδὲ κατακούειν, τοῖς πρὸ αὐτῶν δὲ τὸ πῦρ ἐνιέναι παρεκελεύοντο. τῶν δὲ στασιαστῶν ἀμηχανία μὲν ἦν ἤδη τοῦ βοηθεῖν, φόνος δὲ πανταχοῦ καὶ τροπή. τὸ δὲ πλέον ἀπὸ τοῦ δήμου λαὸς ἀσθενὴς καὶ ἄνοπλος ὅπου καταληφθείη τις ἀπεσφάττετο, καὶ περὶ μὲν τὸν βωμὸν πλῆθος ἐσωρεύετο νεκρῶν, κατὰ δὲ τῶν τοῦ ναοῦ βάθρων αἷμά τʼ ἔρρει πολὺ καὶ τὰ τῶν ἄνω φονευομένων σώματα κατωλίσθανε.",
+      "mistral": "The emperor himself commanded those fighting to extinguish the fire, neither did they heed his voice with greater outcry, nor did they obey the commands of his hand. Some fought while others were enraged. Among the troops, neither exhortation nor threat restrained their impulse, but the spirit of all was their commander. Many fought among themselves, and some, still heated and stirred by the falling stones, suffered defeat. Near the temple, those of the emperor's command were ordered not to enter, but those before them were urged to set the fire. The insurgents' plan was already to aid, but slaughter and chaos prevailed everywhere. From the people, a weak and unarmed one who was caught was slaughtered, and around the altar, a multitude of corpses was guarded. However, the bodies of those slain in the temple fell beneath the foundations.",
+      "kjv": ""
+    },
+    {
+      "ref": "Wars VI.25",
+      "n": 25,
+      "greek": "Καῖσαρ δʼ ὡς οὔτε τὰς ὁρμὰς ἐνθουσιώντων τῶν στρατιωτῶν κατασχεῖν οἷός τε ἦν καὶ τὸ πῦρ ἐπεκράτει, παρελθὼν μετὰ τῶν ἡγεμόνων ἔνδον ἐθεάσατο τοῦ ναοῦ τὸ ἅγιον καὶ τὰ ἐν αὐτῷ, πολὺ μὲν τῆς παρὰ τοῖς ἀλλοφύλοις φήμης ἀμείνω, τοῦ δὲ κόμπου καὶ τῆς παρὰ τοῖς οἰκείοις δόξης οὐκ ἐλάττω. τῆς φλογὸς δὲ οὐδέπω διικνουμένης οὐδαμόθεν εἴσω, τοὺς δὲ περὶ τὸν ναὸν οἴκους νεμομένης, νομίσας, ὅπερ ἦν, ἔτι σώζεσθαι τὸ ἔργον δύνασθαι προπηδᾷ, καὶ αὐτός τε παρακαλεῖν τοὺς στρατιώτας ἐπειρᾶτο τὸ πῦρ σβεννύειν καὶ Λιβεράλιον ἑκατοντάρχην τῶν περὶ αὐτὸν λογχοφόρων ξύλοις παίοντα τοὺς ἀπειθοῦντας ἐκέλευσεν εἴργειν. τῶν δὲ καὶ τὴν πρὸς τὸν Καίσαρα αἰδῶ καὶ τὸν ἀπὸ τοῦ κωλύοντος φόβον ἐνίκων οἱ θυμοὶ καὶ τὸ πρὸς Ἰουδαίους μῖσος, καὶ πολεμική τις ὁρμὴ λαβροτέρα· τοὺς δὲ πολλοὺς ἐνῆγεν ἁρπαγῆς ἐλπίς, δόξαν τε ἔχοντας ὡς τὰ ἔνδον ἅπαντα χρημάτων μεστὰ εἴη, καὶ τὰ πέριξ ὁρῶντας χρυσοῦ πεποιημένα. φθάνει δέ τις καὶ τῶν εἴσω παρεληλυθότων ἐκπηδήσαντος τοῦ Καίσαρος πρὸς ἐποχὴν τῶν στρατιωτῶν πῦρ εἰς τοὺς στροφέας ἐμβαλὼν τῆς πύλης † ἐν σκότῳ· τότε γὰρ ἐξαπίνης ἔνδοθεν ἐκφανείσης φλογὸς οἵ τε ἡγεμόνες μετὰ τοῦ Καίσαρος ἀνεχώρουν, καὶ τοὺς ἔξωθεν οὐδεὶς ὑφάπτειν ἐκώλυεν.",
+      "mistral": "Emperor himself, being unable to quell the fervor of the troops and the fire prevailing, entered inside with the commanders to view the holy temple and what was in it, much more renowned was the report among the foreigners than the reputation among his own. However, the fire was not yet put out from any place, the houses surrounding the temple, thinking that they could still save the work, rushed in, and the emperor himself tried to urge the troops to extinguish the fire and commanded Libealian, centurion of his bodyguards armed with spears, to punish the disobedient. However, the spirits and the fear of the one who was restraining, the hatred towards the Jews, and a fierce battle fury prevailed, and many were driven by the hope of plunder, thinking that all inside was full of riches, and seeing the golden decorations outside. Then someone from those who had come inside the temple, leaping out during a pause in the fighting, threw the fire into the windings of the temple gate in darkness. Then, suddenly, the fire appeared from within, and the commanders with the emperor retreated, and no one was allowed to approach from outside.",
+      "kjv": ""
+    },
+    {
+      "ref": "Wars VI.26",
+      "n": 26,
+      "greek": "ὁ μὲν οὖν ναὸς οὕτως ἄκοντος Καίσαρος ἐμπίπραται.",
+      "mistral": "The temple was thus violently overthrown by Caesar.",
+      "kjv": ""
+    },
+    {
+      "ref": "Wars VI.27",
+      "n": 27,
+      "greek": "Πολλὰ δʼ ἄν τις ἐπολοφυράμενος ἔργῳ πάντων ὧν ὄψει καὶ ἀκοῇ παρειλήφαμεν θαυμασιωτάτῳ κατασκευῆς τε ἕνεκα καὶ μεγέθους ἔτι τε τῆς καθʼ ἕκαστον πολυτελείας καὶ τῆς περὶ τὰ ἅγια δόξης, μεγίστην λάβοι παραμυθίαν τὴν εἱμαρμένην ἄφυκτον οὖσαν ὥσπερ ἐμψύχοις οὕτω καὶ ἔργοις καὶ τόποις. θαυμάσαι δʼ ἄν τις ἐν αὐτῇ τῆς περιόδου τὴν ἀκρίβειαν· καὶ μῆνα γοῦν, ὡς ἔφην, καὶ ἡμέραν ἐτήρησεν τὴν αὐτήν, ἐν ᾗ πρότερον ὑπὸ Βαβυλωνίων ὁ ναὸς ἐνεπρήσθη. καὶ ἀπὸ μὲν τῆς πρώτης αὐτοῦ κτίσεως, ἣν κατεβάλετο Σολομὼν ὁ βασιλεύς; μέχρι τῆς νῦν ἀναιρέσεως, ἣ γέγονεν ἔτει δευτέρῳ τῆς Οὐεσπασιανοῦ ἡγεμονίας, ἔτη συνάγεται χίλια ἑκατὸν τριάκοντα, πρὸς δὲ μῆνες ἑπτὰ καὶ πεντεκαίδεκα ἡμέραι· ἀπὸ δὲ τῆς ὕστερον, ἣν ἔτει δευτέρῳ Κύρου βασιλεύοντος ἐποιήσατο Ἀγγαῖος, ἔτη μέχρι τῆς ὑπὸ Οὐεσπασιανοῦ ἁλώσεως τριακονταεννέα πρὸς ἑξακοσίοις καὶ ἡμέραι τεσσαρακονταπέντε.",
+      "mistral": "The overthrow of the temple, as previously mentioned, was accomplished by Caesar. It would be difficult for anyone, examining and hearing, to find anything more marvelous in terms of construction, size, cost, and the sanctity associated with it. Even in this period, the precision is evident: a month and a day were preserved, in which, as was said, the temple was rebuilt by the Babylonians. From its first construction, which Solomon the king established, up to its recent destruction, which occurred in the second year of the reign of Jehoiachin, a total of 1,130 years can be calculated, with seven and nineteen months remaining. However, from the time it was rebuilt, which occurred in the second year of the reign of Cyrus, up to its capture by Nebuchadnezzar, there are 364 years and forty-five days.",
+      "kjv": ""
+    },
+    {
+      "ref": "Wars VI.28",
+      "n": 28,
+      "greek": "Καιομένου δὲ τοῦ ναοῦ τῶν μὲν προσπιπτόντων ἦν ἁρπαγή, φόνος δὲ τῶν καταλαμβανομένων μυρίος καὶ οὔτε ἡλικίας ἦν ἔλεος οὔτʼ ἐντροπὴ σεμνότητος, ἀλλὰ καὶ παιδία καὶ γέροντες καὶ βέβηλοι καὶ ἱερεῖς ὁμοίως ἀνῃροῦντο, καὶ πᾶν γένος ἐπεξῄει περισχὼν ὁ πόλεμος, ὁμοῦ τούς τε ἱκετεύοντας καὶ τοὺς ἀμυνομένους. συνήχει δὲ ἡ φλὸξ ἐπὶ πλεῖστον ἐκφερομένη τοῖς τῶν πιπτόντων στεναγμοῖς, καὶ διὰ μὲν τὸ ὕψος τοῦ λόφου καὶ τὸ τοῦ φλεγομένου μέγεθος ἔργου πᾶσαν ἄν τις ἔδοξε καίεσθαι τὴν πόλιν, τῆς δὲ βοῆς ἐκείνης οὐδὲν ἐπινοηθῆναι δύναιτʼ ἂν ἢ μεῖζον ἢ φοβερώτερον. τῶν τε γὰρ Ῥωμαϊκῶν ταγμάτων ἀλαλαγμὸς ἦν συμφερομένων, καὶ τῶν στασιαστῶν πυρὶ καὶ σιδήρῳ κεκυκλωμένων κραυγή, τοῦ τε ἀποληφθέντος ἄνω λαοῦ τροπή τε μετʼ ἐκπλήξεως εἰς τοὺς πολεμίους καὶ πρὸς τὸ πάθος οἰμωγαί. συνεβόα δὲ τοῖς ἐπὶ τοῦ λόφου τὸ κατὰ τὴν πόλιν πλῆθος·",
+      "mistral": "The burning temple attracted plunder, and no mercy or pity was shown, neither for age nor for the sanctity, but both children and the elderly, the poor and the priests were slaughtered alike, and every kind of person was swept away by the war, equally those who pleaded and those who resisted. The flame ascended to its greatest height, and due to the height of the hill and the size of the burning structure, anyone seemed to be setting the city on fire. Yet nothing could be imagined to be greater or more terrifying than the sound of that cry. There was confusion among the Roman units, and the cries of the rebels, surrounded by fire and iron, echoed. The crowd above the hill groaned for the city. However, the sudden change of the crowd towards the enemies and towards the suffering echoed a mournful sound.",
+      "kjv": ""
+    },
+    {
+      "ref": "Wars VI.29",
+      "n": 29,
+      "greek": "ἤδη δὲ πολλοὶ τῷ λιμῷ μαραινόμενοι καὶ μεμυκότες ὡς εἶδον τὸ τοῦ ναοῦ πῦρ, εἰς ὀδυρμοὺς πάλιν καὶ κραυγὴν εὐτόνησαν· συνήχει δὲ ἥ τε Περαία καὶ τὰ πέριξ ὄρη βαρυτέραν ποιοῦντα τὴν βοήν.",
+      "mistral": "Already many, famished and covering themselves as they saw the fire of the temple, again groaned and lamented. The nearby hills and the city of Peria intensified the sound.",
+      "kjv": ""
+    },
+    {
+      "ref": "Wars VI.30",
+      "n": 30,
+      "greek": "ἦν δὲ τοῦ θορύβου τὰ πάθη φοβερώτερα· τὸν μέν γε τοῦ ἱεροῦ λόφον ἐκ ῥιζῶν ἄν τις ἔδοξε βράττεσθαι πάντοθεν τοῦ πυρὸς καταγέμοντα, δαψιλέστερον δὲ τὸ αἷμα τοῦ πυρὸς εἶναι καὶ τῶν φονευόντων πλείους τοὺς φονευομένους· οὐδαμοῦ γὰρ ἡ γῆ διεφαίνετο τῶν νεκρῶν, ἀλλὰ σωροῖς ἐπιβαίνοντες οἱ στρατιῶται σωμάτων ἐπὶ τοὺς διαφεύγοντας ἔθεον. τὸ μὲν οὖν λῃστρικὸν πλῆθος ὠσάμενοι τοὺς Ῥωμαίους μόλις εἰς τὸ ἔξω διεκπίπτουσιν ἱερὸν κἀκεῖθεν εἰς τὴν πόλιν, τοῦ δημοτικοῦ δὲ τὸ λειφθὲν ἐπὶ τὴν ἔξω στοὰν κατέφυγε. τῶν δὲ ἱερέων τινὲς τὸ μὲν πρῶτον ἀπὸ τοῦ ναοῦ τούς τε ὀβελοὺς καὶ τὰς ἕδρας αὐτῶν μολίβου πεποιημένας ἀνασπῶντες εἰς τοὺς Ῥωμαίους ἠφίεσαν, αὖθις δὲ ὡς οὔτε ἤνυόν τι καὶ τὸ πῦρ ἐπʼ αὐτοὺς ἀνερρήγνυτο, ἐπὶ τὸν τοῖχον ἀναχωρήσαντες ὄντα ὀκτάπηχυν τὸ εὖρος ἔμενον. δύο γε μὴν τῶν ἐπισήμων, παρὸν σωθῆναι πρὸς Ῥωμαίους μεταστᾶσιν ἢ διακαρτερεῖν πρὸς τὴν μετὰ τῶν ἄλλων τύχην, ἑαυτοὺς ἔρριψαν εἰς τὸ πῦρ καὶ τῷ ναῷ συγκατεφλέγησαν, Μηϊρός τε υἱὸς Βελγᾶ καὶ Ἰώσηπος Δαλαίου. Ῥωμαῖοι δὲ μάταιον τὴν ἐπὶ τοῖς πέριξ φειδὼ κρίναντες τοῦ ναοῦ φλεγομένου πάντα συνεπίμπρασαν, τά τε λείψανα τῶν στοῶν καὶ τὰς πύλας πλὴν δύο, τῆς μὲν ἐκ τῶν ἀνατολικῶν τῆς δὲ μεσημβρινῆς· καὶ ταύτας ὕστερον κατέσκαψαν.",
+      "mistral": "The fear of the tumult was greater. From the very roots of the sacred hill, one could scarcely escape the advancing fire, but the blood of the fire was more numerous than those being slain. No trace of the slain was visible, but the soldiers, diving into the storehouses, flung out the bodies of those fleeing. The rebellious crowd, having attacked the Romans, scarcely went out from the temple and into the city, while the remnant of the citizens fled to the outer portico. Some of the priests, first casting their weapons and seats made of marble into the Romans, then, when neither a way nor the fire opened for them, threw themselves into the fire and set the temple ablaze. Myrhos, son of Belgas, and Joseph, of Dalaios, were among them. The Romans, deeming the fire of the temple to be unimportant, indiscriminately destroyed everything, consuming the remaining goods in the stores and the gates except for two, the eastern and the western. They later destroyed these as well.",
+      "kjv": ""
+    },
+    {
+      "ref": "Wars VI.31",
+      "n": 31,
+      "greek": "ἔκαιον δὲ καὶ τὰ γαζοφυλάκια, ἐν οἷς ἄπειρον μὲν χρημάτων πλῆθος ἄπειροι δʼ ἐσθῆτες καὶ ἄλλα κειμήλια, συνελόντι δʼ εἰπεῖν, πᾶς ὁ Ἰουδαίων σεσώρευτο πλοῦτος, ἀνεσκευασμένων ἐκεῖ τοὺς οἴκους τῶν εὐπόρων.",
+      "mistral": "The treasure chests, containing an innumerable amount of money, innumerable clothing and various valuables, were plundered, as every Jew who could, took from there the houses of the well-off.",
+      "kjv": ""
+    },
+    {
+      "ref": "Wars VI.32",
+      "n": 32,
+      "greek": "ἧκον δὲ καὶ ἐπὶ τὴν λοιπὴν στοὰν τοῦ ἔξωθεν ἱεροῦ· καταφεύγει δʼ ἐπʼ αὐτὴν ἀπὸ τοῦ δήμου γύναια καὶ παιδία καὶ σύμμικτος ὄχλος εἰς ἑξακισχιλίους. πρὶν δὲ Καίσαρα κρῖναί τι περὶ αὐτῶν ἢ κελεῦσαι τοὺς ἡγεμόνας, φερόμενοι τοῖς θυμοῖς οἱ στρατιῶται τὴν στοὰν ὑφάπτουσι, καὶ συνέβη τοὺς μὲν ῥιπτοῦντας αὑτοὺς ἐκ τῆς φλογὸς διαφθαρῆναι, τοὺς δὲ ἐν αὐτῇ· περιεσώθη δὲ ἐκ τοσούτων οὐδείς. τούτοις αἴτιος τῆς ἀπωλείας ψευδοπροφήτης τις κατέστη κατʼ ἐκείνην κηρύξας τὴν ἡμέραν τοῖς ἐπὶ τῆς πόλεως, ὡς ὁ θεὸς ἐπὶ τὸ ἱερὸν ἀναβῆναι κελεύει δεξομένους τὰ σημεῖα τῆς σωτηρίας. πολλοὶ δʼ ἦσαν ἐγκάθετοι παρὰ τῶν τυράννων τότε πρὸς τὸν δῆμον προφῆται προσμένειν τὴν ἀπὸ τοῦ θεοῦ βοήθειαν καταγγέλλοντες, ὡς ἧττον αὐτομολοῖεν καὶ τοὺς ἐπάνω δέους καὶ φυλακῆς γενομένους ἐλπὶς παρακροτοίη. πείθεται δὲ ταχέως ἄνθρωπος ἐν συμφοραῖς, ὅταν δʼ ἤδη καὶ τῶν κατεχόντων δεινῶν ἀπαλλαγὴν ὁ ἐξαπατῶν ὑπογράφῃ, τόθʼ ὁ πάσχων ὅλος γίνεται τῆς ἐλπίδος.",
+      "mistral": "And they came also to the outer storeroom of the temple. From the crowd, women and children and a mixed multitude fled into tens of thousands. Before Caesar made a decision regarding them or commanded the leaders, the soldiers, driven by their emotions, took hold of the storeroom. Some, throwing themselves into the fire, were consumed by it, while others remained in it. However, no one was saved from such a multitude. The cause of their destruction was a false prophet who announced that day to those in the city that God was calling upon the temple and accepting the signs of salvation. There were many prophets then who were close to the people, waiting for the help from God, proclaiming that even the heavy burdens and guards would be relieved, and hope would be fulfilled. But a man is quickly persuaded in distress, and when even the terrifying things holding him are removed by deception, then the one suffering becomes completely without hope.",
+      "kjv": ""
+    },
+    {
+      "ref": "Wars VI.33",
+      "n": 33,
+      "greek": "Τὸν γοῦν ἄθλιον δῆμον οἱ μὲν ἀπατεῶνες καὶ καταψευδόμενοι τοῦ θεοῦ τηνικαῦτα παρέπειθον, τοῖς δʼ ἐναργέσι καὶ προσημαίνουσι τὴν μέλλουσαν ἐρημίαν τέρασιν οὔτε προσεῖχον οὔτʼ ἐπίστευον, ἀλλʼ ὡς ἐμβεβροντημένοι καὶ μήτε ὄμματα μήτε ψυχὴν ἔχοντες τῶν τοῦ θεοῦ κηρυγμάτων παρήκουσαν, τοῦτο μὲν ὅτε ὑπὲρ τὴν πόλιν ἄστρον ἔστη ῥομφαίᾳ παραπλήσιον καὶ παρατείνας ἐπʼ ἐνιαυτὸν κομήτης, τοῦτο δʼ ἡνίκα πρὸ τῆς ἀποστάσεως καὶ τοῦ πρὸς τὸν πόλεμον κινήματος ἀθροιζομένου τοῦ λαοῦ πρὸς τὴν τῶν ἀζύμων ἑορτήν, ὀγδόη δʼ ἦν Ξανθικοῦ μηνός, κατὰ νυκτὸς ἐνάτην ὥραν τοσοῦτο φῶς περιέλαμψε τὸν βωμὸν καὶ τὸν ναόν, ὡς δοκεῖν ἡμέραν εἶναι λαμπράν, καὶ τοῦτο παρέτεινεν ἐφʼ ἡμίσειαν ὥραν·",
+      "mistral": "The wretched populace were persistently deceived and lied to by those falsely claiming to be gods, while the clear and obvious impending destruction was neither heeded nor believed by them. Yet, as if mute and without senses, they gave no heed to the proclamations of God. First, when over the city a star resembling an aster appeared and stood for a year, a comet. Second, before the secession and the onset of war, as the people gathered for the feast of unleavened bread, it was the seventh month, the month of Xanthicus. Nightly, at the ninth hour, such bright light enveloped the altar and the temple that it seemed like a bright day, and this continued for half an hour.",
+      "kjv": ""
+    },
+    {
+      "ref": "Wars VI.34",
+      "n": 34,
+      "greek": "ὃ τοῖς μὲν ἀπείροις ἀγαθὸν ἐδόκει, τοῖς δὲ ἱερογραμματεῦσι πρὸς τῶν ἀποβεβηκότων εὐθέως ἐκρίθη. καὶ κατὰ τὴν αὐτὴν ἑορτὴν βοῦς μὲν ἀχθεῖσα ὑπό του πρὸς τὴν θυσίαν ἔτεκεν ἄρνα ἐν τῷ ἱερῷ μέσῳ, ἡ δʼ ἀνατολικὴ πύλη τοῦ ἐνδοτέρω ναοῦ χαλκῆ μὲν οὖσα καὶ στιβαρωτάτη, κλειομένη δὲ περὶ δείλην μόλις ὑπʼ ἀνθρώπων εἴκοσι, καὶ μοχλοῖς μὲν ἐπερειδομένη σιδηροδέτοις, κατάπηγας δὲ ἔχουσα βαθυτάτους εἰς τὸν οὐδὸν ὄντα διηνεκοῦς λίθου καθιεμένους, ὤφθη κατὰ νυκτὸς ὥραν ἕκτην αὐτομάτως ἠνοιγμένη. δραμόντες δὲ οἱ τοῦ ἱεροῦ φύλακες ἤγγειλαν τῷ στρατηγῷ, κἀκεῖνος ἀναβὰς μόλις αὐτὴν ἴσχυσεν κλεῖσαι. πάλιν τοῦτο τοῖς μὲν ἰδιώταις κάλλιστον ἐδόκει τέρας· ἀνοῖξαι γὰρ τὸν θεὸν αὐτοῖς τὴν τῶν ἀγαθῶν πύλην· οἱ λόγιοι δὲ λυομένην αὐτομάτως τοῦ ναοῦ τὴν ἀσφάλειαν ἐνενόουν, καὶ πολεμίοις δῶρον ἀνοίγεσθαι τὴν πύλην, δηλωτικόν τε ἐρημίας ἀπέφαινον ἐν αὑτοῖς τὸ σημεῖον. μετὰ δὲ τὴν ἑορτὴν οὐ πολλαῖς ἡμέραις ὕστερον, μιᾷ καὶ εἰκάδι Ἀρτεμισίου μηνός, φάσμα τι δαιμόνιον ὤφθη μεῖζον πίστεως· τερατεία δὲ ἂν ἔδοξεν οἶμαι τὸ ῥηθησόμενον, εἰ μὴ καὶ παρὰ τοῖς θεασαμένοις ἱστόρητο καὶ τὰ ἐπακολουθήσαντα πάθη τῶν σημείων ἦν ἄξια· πρὸ γὰρ ἡλίου δύσεως ὤφθη μετέωρα περὶ πᾶσαν τὴν χώραν ἅρματα καὶ φάλαγγες ἔνοπλοι διᾴττουσαι τῶν νεφῶν καὶ κυκλούμεναι τὰς πόλεις. κατὰ δὲ τὴν ἑορτήν, ἣ πεντηκοστὴ καλεῖται, νύκτωρ οἱ ἱερεῖς παρελθόντες εἰς τὸ ἔνδον ἱερόν, ὥσπερ αὐτοῖς ἔθος πρὸς τὰς λειτουργίας, πρῶτον μὲν κινήσεως ἔφασαν ἀντιλαβέσθαι καὶ κτύπου, μετὰ δὲ ταῦτα φωνῆς ἀθρόας μεταβαίνομεν ἐντεῦθεν. τὸ δὲ τούτων φοβερώτερον, Ἰησοῦς γάρ τις υἱὸς Ἀνανίου τῶν ἰδιωτῶν ἄγροικος πρὸ τεσσάρων ἐτῶν τοῦ πολέμου τὰ μάλιστα τῆς πόλεως εἰρηνευομένης καὶ εὐθηνούσης, ἐλθὼν εἰς τὴν ἑορτήν, ἐν ᾗ σκηνοποιεῖσθαι πάντας ἔθος τῷ θεῷ, κατὰ τὸ ἱερὸν ἐξαπίνης ἀναβοᾶν ἤρξατο φωνὴ ἀπὸ ἀνατολῆς, φωνὴ ἀπὸ δύσεως, φωνὴ ἀπὸ τῶν τεσσάρων ἀνέμων, φωνὴ ἐπὶ Ἱεροσόλυμα καὶ τὸν ναόν, φωνὴ ἐπὶ νυμφίους καὶ νύμφας, φωνὴ ἐπὶ τὸν λαὸν πάντα. τοῦτο μεθʼ ἡμέραν καὶ νύκτωρ κατὰ πάντας τοὺς στενωποὺς περιῄει κεκραγώς. τῶν δὲ ἐπισήμων τινὲς δημοτῶν ἀγανακτήσαντες πρὸς τὸ κακόφημον συλλαμβάνουσι τὸν ἄνθρωπον καὶ πολλαῖς αἰκίζονται πληγαῖς.",
+      "mistral": "The object that seemed good to some was immediately captured, to the priests however, for those departed, it was closed immediately. And according to the same festival, a cow was led to the altar and gave birth to a lamb in the middle of the temple. The eastern gate of the inner sanctuary, made of bronze and extremely heavy, was barely opened by men, and with iron chains it was secured with deep holes dug into the unyielding stone. It opened automatically at the fifth hour of the night. The temple guards reported this to the commander, and he barely managed to close it. This seemed best to the common people, for they believed it would open the God to them. The wise, however, feared the security of the temple being breached, and they saw the sign of desolation within themselves. After the festival, not many days later, on the first and fifth day of Artemisius month, a great demonic appearance was seen. It would seem to be a terror if not also reported by those who saw it and the events that followed the signs. Before sunset, chariots and troops were seen moving through the sky and surrounding the cities. During the festival, which is called Pentecost, the priests, according to their custom for the rituals, entered the inner sanctuary and first reported shaking and a sound. After that, we hear a multitude of voices from here. The more terrifying part, however, is that a certain Jesus, a son of Ananias, a layman from the countryside, before the four-year war when the city was most peaceful and thriving, came to the festival where everything was customarily offered to God in the temple. Suddenly, a voice came from the east, from the west, from the four winds, from Jerusalem and the temple, from brides and bridesmaids, from the whole people. This was heard day and night by all the narrow-minded. However, some of the prominent citizens, angered by this blasphemous event, seized the man and subjected him to numerous beatings.",
+      "kjv": ""
+    },
+    {
+      "ref": "Wars VI.35",
+      "n": 35,
+      "greek": "ὁ δὲ οὔθʼ ὑπὲρ αὑτοῦ φθεγξάμενος οὔτε ἰδίᾳ πρὸς τοὺς παίοντας, ἃς καὶ πρότερον φωνὰς βοῶν διετέλει. νομίσαντες δὲ οἱ ἄρχοντες, ὅπερ ἦν, δαιμονιώτερον τὸ κίνημα τἀνδρὸς ἀνάγουσιν αὐτὸν ἐπὶ τὸν παρὰ Ῥωμαίοις ἔπαρχον.",
+      "mistral": "The man, neither speaking on his own behalf nor to the fleeing ones, continued the cries which he had previously made. However, the leaders, believing it to be more demonic, led him before the procurator of the Romans.",
+      "kjv": ""
+    },
+    {
+      "ref": "Wars VI.36",
+      "n": 36,
+      "greek": "ἔνθα μάστιξι μέχρι ὀστέων ξαινόμενος οὔθʼ ἱκέτευσεν οὔτʼ ἐδάκρυσεν, ἀλλʼ ὡς ἐνῆν μάλιστα τὴν φωνὴν ὀλοφυρτικῶς παρεγκλίνων πρὸς ἑκάστην ἀπεκρίνατο πληγήν αἰαὶ Ἱεροσολύμοις. τοῦ δʼ Ἀλβίνου διερωτῶντος, οὗτος γὰρ ἔπαρχος ἦν, τίς εἴη καὶ πόθεν, καὶ διὰ τί ταῦτα φθέγγοιτο, πρὸς ταῦτα μὲν οὐδʼ ὁτιοῦν ἀπεκρίνατο, τὸν δὲ ἐπὶ τῇ πόλει θρῆνον εἴρων οὐ διέλειπεν, μέχρι καταγνοὺς μανίαν ὁ Ἀλβῖνος ἀπέλυσεν αὐτόν.",
+      "mistral": "The stone, hard as it was, neither cried out nor expressed any response, but as if echoing strangely, it answered each blow given to Jerusalem. When Albino asked him who he was and from where, and why he was speaking these things, he remained silent about these things, but regarding the weeping over the city, he did not cease. Albino, recognizing madness in him, released him.",
+      "kjv": ""
+    },
+    {
+      "ref": "Wars VI.37",
+      "n": 37,
+      "greek": "ὁ δὲ τὸν μέχρι τοῦ πολέμου χρόνον οὔτε προσῄει τινὶ τῶν πολιτῶν οὔτε ὤφθη λαλῶν, ἀλλὰ καθʼ ἡμέραν ὥσπερ εὐχὴν μεμελετηκώς αἰαὶ Ἱεροσολύμοις ἐθρήνει. οὔτε δέ τινι τῶν τυπτόντων αὐτὸν ὁσημέραι κατηρᾶτο οὔτε τοὺς τροφῆς μεταδιδόντας εὐλόγει, μία δὲ πρὸς πάντας ἦν ἡ σκυθρωπὴ κλῃδὼν ἀπόκρισις. μάλιστα δʼ ἐν ταῖς ἑορταῖς ἐκεκράγει· καὶ τοῦτʼ ἐφʼ ἑπτὰ ἔτη καὶ μῆνας πέντε εἴρων οὔτʼ ἤμβλυνεν τὴν φωνὴν οὔτʼ ἔκαμεν, μέχρις οὗ κατὰ τὴν πολιορκίαν ἔργα τῆς κλῃδόνος ἰδὼν ἀνεπαύσατο. περιιὼν γὰρ ἀπὸ τοῦ τείχους αἰαὶ πάλιν τῇ πόλει καὶ τῷ λαῷ καὶ τῷ ναῷ διαπρύσιον ἐβόα, ὡς δὲ τελευταῖον προσέθηκεν αἰαὶ δὲ κἀμοί, λίθος ἐκ τοῦ πετροβόλου σχασθεὶς καὶ πλήξας αὐτὸν παραχρῆμα κτείνει, φθεγγομένην δʼ ἔτι τὰς κλῃδόνας ἐκείνας τὴν ψυχὴν ἀφῆκε.",
+      "mistral": "The stone, hard as it was, neither appeared nor spoke to any of the citizens, but it seemed to lament strangely each day for Jerusalem. It did not also express any response to those who struck it, nor did it bless those who gave it food, but there was always a mournful echo. Especially in the festivals it cried out. This continued for seven years and five months without a break, neither softening its voice nor stopping, until it saw the siege works of the city. Going around from the walls, again and again it lamented over the city, the people, and the temple. But as its final act, it released those same clanging sounds and its soul, struck by a stone thrown at it, immediately died.",
+      "kjv": ""
+    },
+    {
+      "ref": "Wars VI.38",
+      "n": 38,
+      "greek": "Ταῦτά τις ἐννοῶν εὑρήσει τὸν μὲν θεὸν ἀνθρώπων κηδόμενον καὶ παντοίως προσημαίνοντα τῷ σφετέρῳ γένει τὰ σωτήρια, τοὺς δʼ ὑπʼ ἀνοίας καὶ κακῶν αὐθαιρέτων ἀπολλυμένους, ὅπου γε Ἰουδαῖοι καὶ τὸ ἱερὸν μετὰ τὴν καθαίρεσιν τῆς Ἀντωνίας τετράγωνον ἐποίησαν, ἀναγεγραμμένον ἐν τοῖς λογίοις ἔχοντες ἁλώσεσθαι τὴν πόλιν καὶ τὸν ναόν, ἐπειδὰν τὸ ἱερὸν γένηται τετράγωνον. τὸ δʼ ἐπᾶραν αὐτοὺς μάλιστα πρὸς τὸν πόλεμον ἦν χρησμὸς ἀμφίβολος ὁμοίως ἐν τοῖς ἱεροῖς εὑρημένος γράμμασιν, ὡς κατὰ τὸν καιρὸν ἐκεῖνον ἀπὸ τῆς χώρας αὐτῶν τις ἄρξει τῆς οἰκουμένης. τοῦθʼ οἱ μὲν ὡς οἰκεῖον ἐξέλαβον καὶ πολλοὶ τῶν σοφῶν ἐπλανήθησαν περὶ τὴν κρίσιν, ἐδήλου δʼ ἄρα τὴν Οὐεσπασιανοῦ τὸ λόγιον ἡγεμονίαν ἀποδειχθέντος ἐπὶ Ἰουδαίας αὐτοκράτορος. ἀλλὰ γὰρ οὐ δυνατὸν ἀνθρώποις τὸ χρεὼν διαφυγεῖν οὐδὲ προορωμένοις. οἱ δὲ καὶ τῶν σημείων ἃ μὲν ἔκριναν πρὸς ἡδονὴν ἃ δὲ ἐξουθένησαν, μέχρις οὗ τῇ τε ἁλώσει τῆς πατρίδος καὶ τῷ σφῶν αὐτῶν ὀλέθρῳ διηλέγχθησαν τὴν ἄνοιαν.",
+      "mistral": "The one who conceives this will find the God of men watchful and always revealing the salvific things to his own generation, but the others, under the influence of ignorance and evil, perishing, where the Jews and the temple, after the profanation by Antonia, made a four-cornered object, as it is written in the scriptures to capture the city and the sanctuary when the temple becomes a four-cornered object. The oracle for war, found ambiguous in the sacred writings, was especially applied to them. However, the oracle was a matter of debate among the wise, and the prophecy of the Overseer (Vespasian) was proven true when he became autocrat of Judea. But it is not possible for humans to escape or avoid what is destined. The leaders and the ones who judged the signs, some for pleasure and others with contempt, were exposed to their own ignorance when the capture of their homeland and their own destruction was demonstrated.",
+      "kjv": ""
+    }
+  ]
+}
