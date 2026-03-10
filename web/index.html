@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Greek New Testament</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=IM+Fell+English:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --parchment:      #f5f0e8;
+    --parchment-dark: #ece4d0;
+    --parchment-mid:  #eee8d8;
+    --ink:            #1a1409;
+    --ink-mid:        #3d3020;
+    --ink-light:      #7a6a50;
+    --red:            #8b1a1a;
+    --gold:           #b8860b;
+    --gold-light:     #d4a017;
+    --border:         #c8b89a;
+    --new-word:       #8b1a1a;
+    --seen-word:      #7a6a50;
+    --sidebar-w:      260px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 18px;
+    line-height: 1.7;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── Header ── */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 200;
+    background: var(--ink);
+    padding: 10px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    border-bottom: 3px solid var(--gold);
+    box-shadow: 0 2px 16px rgba(0,0,0,0.4);
+    flex-wrap: wrap;
+  }
+
+  .header-title {
+    font-family: 'IM Fell English', serif;
+    font-size: 1.3rem;
+    color: var(--gold-light);
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+  }
+
+  .header-title span {
+    font-style: italic;
+    font-size: 0.9rem;
+    color: #a09070;
+    margin-left: 10px;
+  }
+
+  .header-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .btn-group { display: flex; gap: 3px; }
+
+  .hbtn {
+    background: transparent;
+    border: 1px solid #3a3020;
+    color: #8a7a60;
+    padding: 4px 12px;
+    cursor: pointer;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .hbtn:hover  { border-color: var(--gold); color: var(--gold-light); }
+  .hbtn.active { background: var(--gold); border-color: var(--gold); color: var(--ink); font-weight: 700; }
+  .hbtn:disabled { opacity: 0.3; cursor: default; }
+
+  .nav-controls { display: flex; gap: 6px; align-items: center; }
+
+  .verse-counter {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: #a09070;
+    min-width: 70px;
+    text-align: center;
+  }
+
+  /* ── Layout ── */
+  .app {
+    display: flex;
+    flex: 1;
+    min-height: 0;
+  }
+
+  /* ── Sidebar ── */
+  aside {
+    width: var(--sidebar-w);
+    min-width: var(--sidebar-w);
+    background: #13100a;
+    border-right: 1px solid #2a2015;
+    overflow-y: auto;
+    flex-shrink: 0;
+  }
+
+  .sidebar-section {
+    padding: 10px 0;
+    border-bottom: 1px solid #2a2015;
+  }
+
+  .sidebar-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #4a3f2a;
+    padding: 4px 16px 8px;
+  }
+
+  .book-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: #8a7a60;
+    padding: 6px 16px;
+    cursor: pointer;
+    font-family: 'Crimson Pro', serif;
+    font-size: 0.95rem;
+    text-align: left;
+    transition: all 0.12s;
+    gap: 8px;
+  }
+  .book-btn:hover  { background: #1e1810; color: var(--gold-light); }
+  .book-btn.active { background: #2a2015; color: var(--gold-light); font-weight: 600; }
+  .book-btn.incomplete { color: #5a4f3a; }
+
+  .book-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.55rem;
+    padding: 1px 5px;
+    border-radius: 2px;
+    background: #2a2015;
+    color: #5a4f3a;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .book-btn.active .book-badge { background: #3a3020; color: var(--gold); }
+
+  /* ── Main content ── */
+  main {
+    flex: 1;
+    overflow-y: auto;
+    min-width: 0;
+  }
+
+  /* ── Loading state ── */
+  .loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--ink-light);
+    letter-spacing: 0.1em;
+  }
+
+  /* ── Study view ── */
+  #study-view {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 36px 28px 80px;
+  }
+
+  .spread { display: none; animation: fadeIn 0.2s ease; }
+  .spread.active { display: block; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .verse-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    color: var(--ink-light);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .greek-block {
+    background: var(--parchment-mid);
+    color: var(--ink);
+    padding: 22px 28px;
+    font-size: 1.3rem;
+    line-height: 2;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    margin-bottom: 24px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  }
+
+  /* Word key */
+  .key-section { margin-bottom: 24px; }
+
+  .key-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+
+  .key-header h3 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+  }
+
+  .key-legend { display: flex; gap: 14px; font-size: 0.78rem; }
+  .legend-new  { color: var(--new-word); font-weight: 600; }
+  .legend-seen { color: var(--seen-word); }
+
+  .word-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .word-entry {
+    padding: 9px 13px;
+    background: white;
+    border-bottom: 1px solid var(--parchment-dark);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    transition: background 0.1s;
+  }
+  .word-entry:hover { background: var(--parchment); }
+
+  .word-top {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+
+  .word-greek {
+    font-size: 1.05rem;
+    font-weight: 600;
+  }
+  .word-greek.is-new  { color: var(--new-word); }
+  .word-greek.is-seen { color: var(--seen-word); }
+
+  .word-lemma {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.58rem;
+    color: var(--ink-light);
+    opacity: 0.6;
+  }
+
+  .word-perseus {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.55rem;
+    color: var(--red);
+    text-decoration: none;
+    opacity: 0.7;
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+  .word-perseus:hover { opacity: 1; text-decoration: underline; }
+
+  .word-gloss {
+    font-size: 0.82rem;
+    color: var(--ink-mid);
+    font-style: italic;
+    line-height: 1.35;
+  }
+
+  /* Translations */
+  .translations-block {
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .translation {
+    padding: 13px 24px;
+    border-bottom: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 85px 1fr;
+    gap: 14px;
+    align-items: start;
+    background: white;
+  }
+  .translation:last-child { border-bottom: none; }
+  .translation.kjv { background: var(--parchment-dark); }
+  .translation.empty { display: none; }
+
+  .trans-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    color: var(--red);
+    text-transform: uppercase;
+    padding-top: 3px;
+    font-weight: 500;
+  }
+
+  .trans-text {
+    font-style: italic;
+    color: var(--ink-mid);
+    font-size: 1rem;
+  }
+
+  .trans-missing {
+    font-style: normal;
+    color: var(--ink-light);
+    font-size: 0.8rem;
+    opacity: 0.6;
+  }
+
+  /* ── Full text view ── */
+  #full-view {
+    display: none;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 56px 40px 100px;
+    animation: fadeIn 0.25s ease;
+  }
+
+  #full-view h2 {
+    font-family: 'IM Fell English', serif;
+    font-size: 1.7rem;
+    color: var(--red);
+    margin-bottom: 4px;
+  }
+
+  .full-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 32px;
+  }
+
+  .full-tab-bar {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 32px;
+  }
+
+  .tab-btn {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--ink-light);
+    padding: 5px 16px;
+    cursor: pointer;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: all 0.15s;
+  }
+  .tab-btn:hover  { border-color: var(--gold); color: var(--ink); }
+  .tab-btn.active { background: var(--ink); border-color: var(--ink); color: var(--gold-light); font-weight: 700; }
+
+  .full-text { display: none; }
+  .full-text.active { display: block; }
+
+  .full-text.greek-full {
+    font-size: 1.25rem;
+    line-height: 2.05;
+    color: var(--ink);
+  }
+
+  .full-text.english-full {
+    font-size: 1.2rem;
+    line-height: 1.9;
+    font-style: italic;
+    color: var(--ink-mid);
+  }
+
+  .full-verse-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.58rem;
+    font-style: normal;
+    vertical-align: super;
+    color: var(--red);
+    margin-right: 3px;
+  }
+
+  .unavailable-notice {
+    padding: 40px;
+    text-align: center;
+    font-style: italic;
+    color: var(--ink-light);
+    font-size: 0.95rem;
+  }
+
+  /* ── Welcome screen ── */
+  #welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    text-align: center;
+    padding: 60px 40px;
+  }
+
+  #welcome h2 {
+    font-family: 'IM Fell English', serif;
+    font-size: 2rem;
+    color: var(--red);
+    margin-bottom: 8px;
+  }
+
+  #welcome p {
+    color: var(--ink-light);
+    font-style: italic;
+    font-size: 1.05rem;
+  }
+
+  /* ── Progress bar ── */
+  .progress-bar {
+    position: fixed;
+    bottom: 0;
+    left: var(--sidebar-w);
+    right: 0;
+    height: 3px;
+    background: var(--gold);
+    transition: width 0.3s ease;
+    z-index: 300;
+    width: 0;
+  }
+
+  @media (max-width: 700px) {
+    :root { --sidebar-w: 0px; }
+    aside { display: none; }
+    #full-view { padding: 32px 18px 80px; }
+    .greek-block { font-size: 1.05rem; padding: 16px 16px; }
+    .word-grid { grid-template-columns: 1fr; }
+    .translation { grid-template-columns: 1fr; gap: 3px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-title">
+    Ἑλληνική Καινή Διαθήκη
+    <span>Greek New Testament</span>
+  </div>
+  <div class="header-controls">
+    <div class="btn-group" id="mode-btns">
+      <button class="hbtn active" onclick="setMode('study')"    id="mode-study">Study</button>
+      <button class="hbtn"        onclick="setMode('full')"     id="mode-full">Full Text</button>
+    </div>
+    <div class="nav-controls" id="nav-controls">
+      <button class="hbtn" id="prevBtn" onclick="navigate(-1)">← Prev</button>
+      <span class="verse-counter" id="verseCounter">— / —</span>
+      <button class="hbtn" id="nextBtn" onclick="navigate(1)">Next →</button>
+    </div>
+  </div>
+</header>
+
+<div class="app">
+  <aside id="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-label">New Testament</div>
+      <div id="book-list">
+        <div class="loading">Loading…</div>
+      </div>
+    </div>
+  </aside>
+
+  <main id="main-content">
+    <div id="welcome">
+      <h2>Καλῶς ἦλθες</h2>
+      <p>Select a book to begin reading</p>
+    </div>
+  </main>
+</div>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<script>
+// ── State ──
+let bookIndex   = [];
+let currentBook = null;  // full book data
+let currentVerse = 0;
+let currentMode  = 'study';
+let currentTab   = 'greek';
+
+// ── Boot ──
+async function init() {
+  try {
+    const res = await fetch('data/index.json');
+    bookIndex = await res.json();
+    renderSidebar();
+  } catch(e) {
+    document.getElementById('book-list').innerHTML =
+      '<div style="padding:16px;color:#8b1a1a;font-size:0.8rem">Could not load data/index.json<br>Run build_json.py first, then serve with python3 -m http.server 8080</div>';
+  }
+}
+
+// ── Sidebar ──
+function renderSidebar() {
+  const el = document.getElementById('book-list');
+  el.innerHTML = bookIndex.map(b => {
+    const badge = b.hasTranslation ? '' : '<span class="book-badge">Greek only</span>';
+    const cls   = b.hasTranslation ? '' : ' incomplete';
+    return `<button class="book-btn${cls}" onclick="loadBook('${b.code}')" id="btn-${b.code}">
+      ${b.name}${badge}
+    </button>`;
+  }).join('');
+}
+
+// ── Load book ──
+async function loadBook(code) {
+  // Update sidebar active state
+  document.querySelectorAll('.book-btn').forEach(b => b.classList.remove('active'));
+  const btn = document.getElementById(`btn-${code}`);
+  if (btn) btn.classList.add('active');
+
+  document.getElementById('main-content').innerHTML = '<div class="loading">Loading…</div>';
+
+  try {
+    const res = await fetch(`data/${code}.json`);
+    currentBook  = await res.json();
+    currentVerse = 0;
+    renderBook();
+  } catch(e) {
+    document.getElementById('main-content').innerHTML =
+      `<div class="loading">Failed to load ${code}.json</div>`;
+  }
+}
+
+// ── Render book ──
+function renderBook() {
+  const main = document.getElementById('main-content');
+  main.innerHTML = '';
+
+  // Study view container
+  const studyDiv = document.createElement('div');
+  studyDiv.id = 'study-view';
+
+  currentBook.verses.forEach((v, i) => {
+    const div = document.createElement('div');
+    div.className = 'spread' + (i === 0 ? ' active' : '');
+    div.id = `spread-${i}`;
+
+    const wordItems = v.words.map(w => {
+      const gloss = w.gloss || '<span class="trans-missing">no gloss</span>';
+      const lemmaEnc = encodeURIComponent(w.lemma);
+      const perseus  = `https://www.perseus.tufts.edu/hopper/morph?l=${lemmaEnc}&la=greek`;
+      return `<div class="word-entry">
+        <div class="word-top">
+          <span class="word-greek ${w.isNew ? 'is-new' : 'is-seen'}">${w.greek}</span>
+          <span class="word-lemma">→ ${w.lemma}</span>
+          <a class="word-perseus" href="${perseus}" target="_blank" rel="noopener" title="Look up in Perseus LSJ">↗ LSJ</a>
+        </div>
+        <div class="word-gloss">${gloss}</div>
+      </div>`;
+    }).join('');
+
+    const mistralRow = v.mistral
+      ? `<div class="translation">
+           <span class="trans-label">Mistral</span>
+           <span class="trans-text">${v.mistral}</span>
+         </div>`
+      : `<div class="translation">
+           <span class="trans-label">Mistral</span>
+           <span class="trans-missing">Translation pending</span>
+         </div>`;
+
+    const kjvRow = v.kjv
+      ? `<div class="translation kjv">
+           <span class="trans-label">KJV</span>
+           <span class="trans-text">${v.kjv}</span>
+         </div>`
+      : '';
+
+    div.innerHTML = `
+      <div class="verse-label">${currentBook.name} ${v.ref}</div>
+      <div class="greek-block">${v.greek}</div>
+      <div class="key-section">
+        <div class="key-header">
+          <h3>Word Key</h3>
+          <div class="key-legend">
+            <span class="legend-new">● new word</span>
+            <span class="legend-seen">● seen before</span>
+          </div>
+        </div>
+        <div class="word-grid">${wordItems}</div>
+      </div>
+      <div class="translations-block">
+        ${mistralRow}
+        ${kjvRow}
+      </div>`;
+
+    studyDiv.appendChild(div);
+  });
+
+  // Full text view
+  const fullDiv = document.createElement('div');
+  fullDiv.id = 'full-view';
+
+  const greekText   = currentBook.verses.map(v =>
+    `<span class="full-verse"><sup class="full-verse-num">${v.ref.split(':')[1]}</sup>${v.greek} </span>`
+  ).join('');
+
+  const mistralText = currentBook.hasTranslation
+    ? currentBook.verses.map(v =>
+        `<span class="full-verse"><sup class="full-verse-num">${v.ref.split(':')[1]}</sup>${v.mistral || '<em style="opacity:0.4">—</em>'} </span>`
+      ).join('')
+    : '<div class="unavailable-notice">Translation not yet available for this book.</div>';
+
+  const kjvText = currentBook.hasKjv
+    ? currentBook.verses.map(v =>
+        `<span class="full-verse"><sup class="full-verse-num">${v.ref.split(':')[1]}</sup>${v.kjv || '<em style="opacity:0.4">—</em>'} </span>`
+      ).join('')
+    : '<div class="unavailable-notice">KJV text not available for this book.</div>';
+
+  fullDiv.innerHTML = `
+    <h2>${currentBook.name}</h2>
+    <div class="full-meta">${currentBook.verseCount} verses</div>
+    <div class="full-tab-bar">
+      <button class="tab-btn ${currentTab==='greek'   ? 'active':''}" onclick="setTab('greek',this)">Greek</button>
+      <button class="tab-btn ${currentTab==='mistral' ? 'active':''}" onclick="setTab('mistral',this)">Mistral</button>
+      <button class="tab-btn ${currentTab==='kjv'     ? 'active':''}" onclick="setTab('kjv',this)">KJV 1611</button>
+    </div>
+    <div class="full-text greek-full   ${currentTab==='greek'   ? 'active':''}" id="full-greek">${greekText}</div>
+    <div class="full-text english-full ${currentTab==='mistral' ? 'active':''}" id="full-mistral">${mistralText}</div>
+    <div class="full-text english-full ${currentTab==='kjv'     ? 'active':''}" id="full-kjv">${kjvText}</div>`;
+
+  main.appendChild(studyDiv);
+  main.appendChild(fullDiv);
+
+  // Hide welcome if shown
+  const welcome = document.getElementById('welcome');
+  if (welcome) welcome.remove();
+
+  applyMode();
+  updateNavUI();
+}
+
+// ── Mode ──
+function setMode(m) {
+  currentMode = m;
+  ['study','full'].forEach(id => {
+    document.getElementById(`mode-${id}`).classList.toggle('active', id === m);
+  });
+  document.getElementById('nav-controls').style.display = m === 'study' ? 'flex' : 'none';
+  applyMode();
+  document.getElementById('main-content').scrollTop = 0;
+}
+
+function applyMode() {
+  const sv = document.getElementById('study-view');
+  const fv = document.getElementById('full-view');
+  if (!sv || !fv) return;
+  sv.style.display = currentMode === 'study' ? 'block' : 'none';
+  fv.style.display = currentMode === 'full'  ? 'block' : 'none';
+}
+
+// ── Tabs ──
+function setTab(tab, btn) {
+  currentTab = tab;
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  document.querySelectorAll('.full-text').forEach(el => el.classList.remove('active'));
+  const target = document.getElementById(`full-${tab}`);
+  if (target) target.classList.add('active');
+}
+
+// ── Navigation ──
+function navigate(dir) {
+  if (!currentBook) return;
+  const spreads = document.querySelectorAll('.spread');
+  spreads[currentVerse].classList.remove('active');
+  currentVerse = Math.max(0, Math.min(spreads.length - 1, currentVerse + dir));
+  spreads[currentVerse].classList.add('active');
+  document.getElementById('main-content').scrollTop = 0;
+  updateNavUI();
+}
+
+function updateNavUI() {
+  if (!currentBook) return;
+  const total = currentBook.verses.length;
+  document.getElementById('verseCounter').textContent = `${currentVerse + 1} / ${total}`;
+  document.getElementById('prevBtn').disabled = currentVerse === 0;
+  document.getElementById('nextBtn').disabled = currentVerse === total - 1;
+  const pct = ((currentVerse + 1) / total * 100).toFixed(1);
+  document.getElementById('progressBar').style.width = pct + '%';
+}
+
+// ── Keyboard ──
+document.addEventListener('keydown', e => {
+  if (currentMode !== 'study' || !currentBook) return;
+  if (e.target.tagName === 'INPUT') return;
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown')  navigate(1);
+  if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')    navigate(-1);
+});
+
+init();
+</script>
+</body>
+</html>
