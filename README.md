@@ -2,7 +2,7 @@
 
 A static website presenting Greek texts with machine translations. No canonical hierarchy — the New Testament, Marcion's Evangelion, and Josephus are treated as equal sources. Hosted on GitHub Pages.
 
-**Thesis context**: The project deliberately avoids privileging "biblical" texts over contemporary sources. Mary of Bethezuba (Josephus) sits alongside Mary of Nazareth. Jesus son of Ananus (Josephus) alongside Jesus of Nazareth. Marcion's Evangelion sits alongside Matthew and Luke. Mistral 7B is not told what it is translating, all sources have the same prompt and workflow.
+**Thesis context**: The project deliberately avoids privileging "biblical" texts over contemporary sources. Mary of Bethezuba (Josephus) sits alongside Mary of Nazareth. Jesus son of Ananus (Josephus) alongside Jesus of Nazareth. Mistral 7B is not told what it is translating, all sources have the same prompt and workflow.
 
 Live site: `https://bethezuba.github.io/NT/`
 
@@ -56,8 +56,6 @@ Single HTML file (`docs/index.html`), no framework, no build step.
 **Greek Lexicon**: Dodson Greek Lexicon (https://github.com/morphgnt/dodson-lexicon), public domain.
 
 **King James Version**: KJV 1611, public domain.
-
-**Marcion's Evangelion**: BeDuhn–Bilby Greek reconstruction. Mark G. Bilby and Jason D. BeDuhn, *Journal of Open Humanities Data* (2023). CC BY-NC-ND. https://openhumanitiesdata.metajnl.com/articles/10.5334/johd.126
 
 **Josephus — Jewish War**: Greek text from open corpus. W. Whiston (1737) translation reproduced in read mode for comparison, public domain.
 
