@@ -77,4 +77,4 @@ Translation scripts are resumable — interrupt and restart freely.
 ---
 ## Todo
 
-Evangelion and Josephus custom lexicons from morphological data
+Josephus custom lexicons from morphological data, will need fresh translation as current from plain text source
