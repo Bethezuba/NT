@@ -75,17 +75,3 @@ Single HTML file (`docs/index.html`), no framework, no build step.
 Translation scripts are resumable — interrupt and restart freely.
 
 ---
-
-## Dev
-
-```bash
-cd ~/NT/docs
-python3 -m http.server 8080
-```
-
-```bash
-cd ~/NT
-git add -A
-git commit -m "message"
-git push origin master
-```
