@@ -13,7 +13,6 @@ Live site: `https://bethezuba.github.io/NT/`
 | Text | Author | Verses | Greek source |
 |------|--------|--------|--------------|
 | New Testament (27 books) | — | ~7,959 | MorphGNT, CC BY-SA 3.0 |
-| Evangelion | Marcion of Sinope (BeDuhn–Bilby reconstruction) | 552 | JOHD 2023, CC BY-NC-ND |
 | Jewish War VI (Mary–Vespasian oracle passage) | Flavius Josephus | 38 | Open corpus |
 
 ---
