@@ -8,8 +8,7 @@ Hosted on GitHub Pages. Built with plain Python + vanilla JS, no frameworks.
 
 **Thesis context**: The project deliberately avoids privileging "biblical" texts over
 contemporary sources. Mary of Bethezuba (Josephus) sits alongside Mary of Nazareth.
-Jesus son of Ananus (Josephus) alongside Jesus of Nazareth. Mistral 7B translates
-both neutrally because it is not told what it is translating.
+Jesus son of Ananus (Josephus) alongside Jesus of Nazareth.
 
 ---
 
