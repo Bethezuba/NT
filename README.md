@@ -75,3 +75,6 @@ Single HTML file (`docs/index.html`), no framework, no build step.
 Translation scripts are resumable — interrupt and restart freely.
 
 ---
+## Todo
+
+Evangelion and Josephus custom lexicons from morphological data
