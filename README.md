@@ -35,7 +35,7 @@ Begin your response immediately with the first word of the English translation.
 Greek: {greek}
 ```
 
-No content restrictions applied. Machine translation, unreviewed. Not for citation without verification against the Greek.
+No content restrictions applied. Machine translation, unreviewed.
 
 ---
 
