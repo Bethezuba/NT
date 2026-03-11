@@ -196,6 +196,18 @@
     "group": "josephus",
     "verseCount": 38,
     "hasTranslation": true,
-    "hasKjv": false
+    "hasKjv": false,
+    "hasWhiston": true
+  },
+  {
+    "code": "marcion",
+    "name": "Evangelion",
+    "author": "Marcion (BeDuhn–Bilby recon.)",
+    "type": "prose",
+    "group": "apocrypha",
+    "verseCount": 552,
+    "hasTranslation": true,
+    "hasKjv": false,
+    "hasWhiston": false
   }
 ]
