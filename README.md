@@ -2,8 +2,6 @@
 
 A static website presenting Greek texts with machine translations. No canonical hierarchy — the New Testament, Marcion's Evangelion, and Josephus are treated as equal sources. Hosted on GitHub Pages.
 
-**Thesis context**: The project deliberately avoids privileging "biblical" texts over contemporary sources. Mary of Bethezuba (Josephus) sits alongside Mary of Nazareth. Jesus son of Ananus (Josephus) alongside Jesus of Nazareth. Mistral 7B is not told what it is translating, all sources have the same prompt and workflow.
-
 Live site: `https://bethezuba.github.io/NT/`
 
 ---
